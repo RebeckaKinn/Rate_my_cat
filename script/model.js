@@ -1,0 +1,3 @@
+const cats = [
+    {name: '', img: ''},
+];
