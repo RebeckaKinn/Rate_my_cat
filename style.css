@@ -1,4 +1,20 @@
-.imageRating{
-    width: 200px;
-    height: 300px;
+body{
+    background-color: bisque;
 }
+
+button{
+    color: rgba(97, 81, 63, 0.651);
+    background-color: bisque;
+    border-radius: 20px;
+    border-color: rgb(206, 183, 156);
+}
+
+h1{
+    font-family: 'Lucida Handwriting';
+}
+
+.imageRating{
+    width: auto;
+    height: 200px;
+}
+

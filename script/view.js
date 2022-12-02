@@ -1,9 +1,9 @@
 frontPage();
 function frontPage(){
-    const site = document.getElementById(`app`);
-    site.innerHTML = /*HTML*/`
+    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 260px; width: auto"/>';
+    model.site.innerHTML = /*HTML*/`
     <h1>Rate My Pussy!</h1>
-    <div>front image here</div>
+    <div>${frontImage}</div>
     <button onclick="rating()">Rating</button>
     <button onclick="topRated()">Topp rated</button>
     <button onclick="profile()">Profile</button>
@@ -12,8 +12,7 @@ function frontPage(){
 }
 
 function rating(){
-    const site = document.getElementById(`app`);
-        site.innerHTML = /*HTML*/`
+        model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <p>${model.cats[model.currentCat].name}</p>
         <button onclick="nextCat('left')"><--</button>
@@ -22,7 +21,7 @@ function rating(){
         <button onclick="nextCat('right')">--></button>
         `;
            for(let j = 0; j < model.ratings.length; j++){
-            site.innerHTML += /*HTML*/`
+            model.site.innerHTML += /*HTML*/`
             <div class="slidecontainer">
             <div>${model.ratingNames[j]}</div> 
             <input type="range" min="1" max="10" value="${model.ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
@@ -35,8 +34,7 @@ function rating(){
 
 
 function topRated(){
-    const site = document.getElementById(`app`);
-    site.innerHTML = /*HTML*/`
+    model.site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <h3>Top 3 rated:</h3>
     <br/>
@@ -55,7 +53,7 @@ function topRated(){
     <h3>All cats:</h3>
     `;
     for(let i = 0; i < model.cats.length; i++){
-        site.innerHTML += /*HTML*/`
+        model.site.innerHTML += /*HTML*/`
         <p>${model.cats[i].name}</p>
         <div>${model.cats[i].img}</div>
         <p>${model.cats[i].points}</p>
@@ -66,9 +64,8 @@ function topRated(){
 }
 
 function profile(){
-    const site = document.getElementById(`app`);
     if(model.currentUser[0] == model.users[0]){
-        site.innerHTML = /*HTML*/`
+        model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
         <button onclick="uploadProfilePicture()">Upload profile picture</button>
@@ -85,7 +82,7 @@ function profile(){
         //cats not done
     
     }else{
-        site.innerHTML = /*HTML*/`
+        model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logIn()">Log in</button>
         <p>Not have an account yet?</p>
@@ -97,8 +94,7 @@ function profile(){
 }
 
 function logIn(){
-    const site = document.getElementById(`app`);
-    site.innerHTML = /*HTML*/`
+    model.site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <div>Username:</div>
     <input type="text" id="usernameBox"/>
@@ -111,8 +107,7 @@ function logIn(){
 }
 
 function createAccount(){
-    const site = document.getElementById(`app`);
-    site.innerHTML = /*HTML*/`
+    model.site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <div>Create username:</div>
     <input type="text" id="newUserNameBox"/>
