@@ -12,47 +12,54 @@ const model = {
         onwer: 2,
         id: 2},
 
-        {name: '', 
-        img: '', 
+        {name: 'Mia', 
+        img: '<img src="img/mia.png"/>', 
         points: 0,
-        onwer: 0,
+        onwer: 1,
         id: 3},
+
+        {name: 'Rolf', 
+        img: '<img src="img/rolf.png"/>', 
+        points: 0,
+        onwer: 4,
+        id: 4},
     ],
 
     users: [
         {name: 'Ståle', 
-        password: '',
+        password: '123',
         img: '',
         info: 'Skriv litt om deg selv',
         id: 1},
 
         {name: 'Marie', 
-        password: '',
+        password: 'abc',
         img: '',
-        info: 'Skriv litt om deg selv2',
+        info: 'Skriv litt om deg selv',
         id: 2},
 
-        {name: '', 
-        password: '',
+        {name: 'Heine', 
+        password: '123abc',
         img: '',
-        info: 'Skriv litt om deg selv2',
+        info: 'Skriv litt om deg selv',
         id: 3},
     ],
 
-    userRatings: {
-        fur: {name: 'Fur quality', rating: 5},
-        face: {name: 'Face cuteness', rating: 5},
-        shine: {name: 'Shine and vibe', rating: 5},
-        tail: {name: 'Tail beauty', rating: 5},
+    savedInfo: {
+        userID: 0,
+        catID: 0,
+        ratings: [0, 0, 0, 0],
     },
+
+    ratings: [0, 0, 0, 0],
+
+    ratingNames: ['Fur quality', 'Face cuteness', 'Shine and vibe', 'Tail beauty'],
 
     pushPoints: [],
+    currentCat: 0,
+    currentUserNumber: 0,
+    currentUser: [],
 
-    currentUser: {
-        name: 'Name', 
-        password: '',
-        img: '',
-        info: 'Skriv litt om deg selv',
-        id: 1,
-    },
+    password: document.getElementById(`passwordBox`),
+    username: document.getElementById(`usernameBox`),
 };

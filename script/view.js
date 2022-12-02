@@ -5,7 +5,7 @@ function frontPage(){
     <h1>Rate My Pussy!</h1>
     <div>front image here</div>
     <button onclick="rating()">Rating</button>
-    <button onclick="toppRated()">Topp rated</button>
+    <button onclick="topRated()">Topp rated</button>
     <button onclick="profile()">Profile</button>
     `;
     //front image not done
@@ -13,57 +13,68 @@ function frontPage(){
 
 function rating(){
     const site = document.getElementById(`app`);
-    for(let i = 0; i < model.cats.length; i++){
         site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
-        <p>${model.cats[i].name}</p>
-        <div onclick="nextCat('left')"><--</div>
-        <div class="imageRating">${model.cats[i].img}</div>
-        <p>${model.cats[i].points}</p>
-        <div onclick="nextCat('right')">--></div>
-    
-        <div class="slidecontainer">
-            <input type="range" min="1" max="10" value="${model.userRatings.fur.rating}" onchange="updateRatings(parseInt(this.value))"/>
-            <div>${model.userRatings.fur.name} ${model.userRatings.fur.rating}</div>
-            <input type="range" min="1" max="10" value="${model.userRatings.face.rating}" onchange="updateRatings(parseInt(this.value))"/>
-            <div>${model.userRatings.face.name} ${model.userRatings.face.rating}</div>
-            <input type="range" min="1" max="10" value="${model.userRatings.shine.rating}" onchange="updateRatings(parseInt(this.value))"/>
-            <div>${model.userRatings.shine.name} ${model.userRatings.shine.rating}</div>
-            <input type="range" min="1" max="10" value="${model.userRatings.tail.rating}" onchange="updateRatings(parseInt(this.value))"/>
-            <div>${model.userRatings.tail.name} ${model.userRatings.tail.rating}</div>
-        </div>
-    `;
-    }
+        <p>${model.cats[model.currentCat].name}</p>
+        <button onclick="nextCat('left')"><--</button>
+        <div class="imageRating">${model.cats[model.currentCat].img}</div>
+        <p>${model.cats[model.currentCat].points}</p>
+        <button onclick="nextCat('right')">--></button>
+        `;
+           for(let j = 0; j < model.ratings.length; j++){
+            site.innerHTML += /*HTML*/`
+            <div class="slidecontainer">
+            <div>${model.ratingNames[j]}</div> 
+            <input type="range" min="1" max="10" value="${model.ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
+            <div>${model.ratings[j]}</div>
+            </div>
+        `;}
+}    
     //cat list not done
     //connection not done
-    //nextcat not done (go through array of cats and update them)
-}
 
-function toppRated(){
+
+function topRated(){
     const site = document.getElementById(`app`);
     site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
-    <p>Top 3 rated</p>
-    <div>cat image here</div>
-    <p>points</p>
-    <div>cat image here</div>
-    <p>points</p>
-    <div>cat image here</div>
-    <p>points</p>
+    <h3>Top 3 rated:</h3>
+    <br/>
+        <p>${model.cats[model.currentCat].name}</p>
+        <div>${model.cats[model.currentCat].img}</div>
+        <p>${model.cats[model.currentCat].points}</p>
+    
+        <p>${model.cats[model.currentCat].name}</p>
+        <div>c${model.cats[model.currentCat].img}</div>
+        <p>${model.cats[model.currentCat].points}</p>
+
+        <p>${model.cats[model.currentCat].name}</p>
+        <div>${model.cats[model.currentCat].img}</div>
+        <p>${model.cats[model.currentCat].points}</p>
+    <br/>
+    <h3>All cats:</h3>
     `;
-    //cats not done
+    for(let i = 0; i < model.cats.length; i++){
+        site.innerHTML += /*HTML*/`
+        <p>${model.cats[i].name}</p>
+        <div>${model.cats[i].img}</div>
+        <p>${model.cats[i].points}</p>
+        `;
+    }
     //points not done
+    //connection not done
 }
 
 function profile(){
     const site = document.getElementById(`app`);
-    for(let i = 0; i < model.users.length; i++){
-    if(model.currentUser[i]){
+    if(model.currentUser[0] == model.users[0]){
         site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
-        <h3>Welcome to your profile ${model.users[i].name}</h3>
-        <div>${model.users[i].img}</div>
-        <p>${model.users[i].info}</p>
+        <button onclick="logOut()">Log out</button>
+        <button onclick="uploadProfilePicture()">Upload profile picture</button>
+        <h3>Welcome to your profile ${model.users[currentUserNumber].name}</h3>
+        <div>${model.users[currentUserNumber].img}</div>
+        <p>${model.users[currentUserNumber].info}</p>
         <P>My cats</p>
         <div>image cat of user</div>
         <p>info about cat from user</p>
@@ -81,7 +92,6 @@ function profile(){
         <button onclick="createAccount()">Create account</button>
         `;
         }
-    }
     //login not done
     //createaccount not done
 }
@@ -91,10 +101,10 @@ function logIn(){
     site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <div>Username:</div>
-    <input type="text"/>
+    <input type="text" id="usernameBox"/>
     <div>Password:</div>
-    <input type="text"/>
-    <button onclick="profile()">Log in</button>
+    <input type="text" id="passwordBox"/>
+    <button onclick="logInnUser()">Log in</button>
     `;
     //connection of user not done
     //right or wrong password/username not done
@@ -105,9 +115,9 @@ function createAccount(){
     site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <div>Create username:</div>
-    <input type="text"/>
+    <input type="text" id="newUserNameBox"/>
     <div>Create password:</div>
-    <input type="text"/>
+    <input type="text" id="newPasswordBox"/>
     <button onclick="createProfile()">Create Profile</button>
     `;
     //createProfile not done
