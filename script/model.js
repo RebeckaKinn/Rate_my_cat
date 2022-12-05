@@ -8,24 +8,28 @@ const model = {
         img: '<img src="img/ståles_pus.jpg" style="height: 200px; width: auto"/>', 
         points: 0,
         onwer: 1,
+        ratings: [0, 0, 0, 0],
         id: 1},
 
         {name: 'Jasmine', 
         img: '<img src="img/marie_jasmine.jpg" style="height: 200px; width: auto"/>', 
         points: 0,
         onwer: 2,
+        ratings: [0, 0, 0, 0],
         id: 2},
 
         {name: 'Mia', 
         img: '<img src="img/mia.png" style="height: 200px; width: auto"/>', 
         points: 0,
         onwer: 1,
+        ratings: [0, 0, 0, 0],
         id: 3},
 
         {name: 'Rolf', 
         img: '<img src="img/rolf.png" style="height: 200px; width: auto"/>', 
         points: 0,
         onwer: 4,
+        ratings: [0, 0, 0, 0],
         id: 4},
     ],
 

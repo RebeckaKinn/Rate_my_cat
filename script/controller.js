@@ -30,7 +30,7 @@ function logInnUser(){
 }
 //not done
 function logOut(){
-    model.currentUser.splice();
+    model.currentUser.splice(0, model.currentUser.length);
     frontPage();
 }
 
@@ -57,14 +57,19 @@ function nextCat(side){
     else{
         model.currentCat = model.currentCat % model.cats.length;
     }
-    let currentRatings = (model.ratings[0] + model.ratings[1] + model.ratings[2] + model.ratings[3]) / 4; 
-    model.cats[model.currentCat].points.push(currentRatings);
     rating();
     return model.cats[model.currentCat];
 }
 
-    //check who is top rated (not done)
+//not done
+function saveChanges(){
+    
+
+}
+
+//check who is top rated (not done)
 function topRatedSite(){
     for(let i = 0; i < model.cats.length; i++){}
     topRated();
 }
+

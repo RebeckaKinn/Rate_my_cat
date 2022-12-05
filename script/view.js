@@ -24,7 +24,7 @@ function rating(){
             model.site.innerHTML += /*HTML*/`
             <div class="slidecontainer">
             <div>${model.ratingNames[j]}</div> 
-            <input type="range" min="1" max="10" value="${model.ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
+            <input type="range" min="0" max="10" value="${model.ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
             <div>${model.ratings[j]}</div>
             </div>
         `;}
