@@ -1,7 +1,5 @@
 const model = {
     site: document.getElementById(`app`),
-    password: document.getElementById(`passwordBox`),
-    username: document.getElementById(`usernameBox`),
 
     cats: [
         {name: 'Pusifer', 
@@ -36,19 +34,19 @@ const model = {
     users: [
         {name: 'Ståle', 
         password: '123',
-        img: '<img src="img/default_profile.png"/>',
+        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
         info: 'Skriv litt om deg selv',
         id: 1},
 
         {name: 'Marie', 
         password: 'abc',
-        img: '<img src="img/default_profile.png"/>',
+        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
         info: 'Skriv litt om deg selv',
         id: 2},
 
         {name: 'Heine', 
         password: '123abc',
-        img: '<img src="img/default_profile.png"/>',
+        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
         info: 'Skriv litt om deg selv',
         id: 3},
     ],

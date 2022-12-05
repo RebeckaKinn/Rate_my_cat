@@ -29,8 +29,7 @@ function rating(){
             </div>
         `;}
 }    
-    //cat list not done
-    //connection not done
+    //connection between users and cats not done
 
 
     //top rated DONE
@@ -63,15 +62,15 @@ function topRated(){
     }
 }
 
-function profile(){
-    if(model.currentUser[0] == model.users[0]){
+function profile(index){
+    if(model.currentUser.length > 0){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
         <button onclick="uploadProfilePicture()">Upload profile picture</button>
-        <h3>Welcome to your profile ${model.users[currentUserNumber].name}</h3>
-        <div>${model.users[currentUserNumber].img}</div>
-        <p>${model.users[currentUserNumber].info}</p>
+        <h3>Welcome to your profile ${model.users[index].name}</h3>
+        <div>${model.users[index].img}</div>
+        <p>${model.users[index].info}</p>
         <P>My cats</p>
         <div>image cat of user</div>
         <p>info about cat from user</p>
@@ -79,7 +78,6 @@ function profile(){
         <button onclick="uploadCat()">Upload cat</button>
         `;
         //uploadCat not done
-        //cats not done
     
     }else{
         model.site.innerHTML = /*HTML*/`
@@ -90,7 +88,7 @@ function profile(){
         `;
         }
     //login not done
-    //createaccount not done
+    //createaccount not tested
 }
 
 function logIn(){

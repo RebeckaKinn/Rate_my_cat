@@ -1,34 +1,41 @@
 //profile creation and logIn 
-//not done
+//not tested/not done
 function createProfile(){
-    let newPassword = document.getElementById(`newPasswordBox`);
-    let newUsername = document.getElementById(`newUserNameBox`);
-
+    let newPassword = document.getElementById(`newPasswordBox`).value;
+    let newUsername = document.getElementById(`newUserNameBox`).value;
     let userIndex = model.users.length + 1;
-    model.users[userIndex].password.push(newPassword.value);
-    model.users[userIndex].name.push(newUsername.value);
-    model.users[userIndex].id.push(userIndex);
-    model.users[userIndex].img.push('<img src="img/default_profile.png"/>');
-    model.users[userIndex].info.push('Skriv litt om deg selv');
+    model.users.push({name: newUsername, 
+                    password: newPassword,
+                    img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
+                    info: 'Skriv litt om deg selv',
+                    id: userIndex});
     profile();
 }
 
-function logInnUser(){
-    let index = model.users.length;
-    if(model.password.value == model.users[index].password && model.username.value == model.users[index.name]){
-        profile();
-        
-    }
-    if(model.password.value != model.users[index].password || model.username.value != model.users[index].name){
-        model.password.value = '';
-        model.username.value = '';
-        model.site.innerHTML += /*HTML*/`
-        <h3>Password or username is incorrect. Please try again.</h3>
-        `;
-    }
-    console.log(model.password.value)
-}
 //not done
+function saveChanges(){
+    
+
+}
+//not tested
+function logInnUser(){
+    let password = document.getElementById(`passwordBox`).value;
+    let username = document.getElementById(`usernameBox`).value;
+    for(let i = 0; i< model.users.length; i++){
+        if(password == model.users[i].password && username == model.users[i].name){
+            model.currentUser.push(model.users[i]);
+            profile(i);
+        
+        }if(username != model.users[i].name || password != model.users[i].password){
+            password = '';
+            username = '';
+            model.site.innerHTML += /*HTML*/`
+            <h3>Password or username is incorrect. Please try again.</h3>
+            `;
+        }
+    }
+}
+//DONE
 function logOut(){
     model.currentUser.splice(0, model.currentUser.length);
     frontPage();
@@ -41,7 +48,6 @@ function updateRatings(newRating, number, cat){
     model.cats[cat].points = (model.cats[model.currentCat].ratings[0] + model.cats[model.currentCat].ratings[1] + model.cats[model.currentCat].ratings[2] + model.cats[model.currentCat].ratings[3]) / 4;
     rating();
 };
-
 //tuggle which cat is visible DONE
 function nextCat(side){
     if(side == 'right'){
@@ -59,16 +65,10 @@ function nextCat(side){
     rating();
     return model.cats[model.currentCat];
 }
-
-//not done
-function saveChanges(){
-    
-
-}
-
-//check who is top rated (not done)
+//check who is top rated DONE
 function topRatedSite(){
-    const result = model.cats.sort((a,b) => b.points - a.points).slice(0, 3)
-    console.log(result);
+    model.cats.sort((a,b) => b.points - a.points).slice(0, 3)
 }
+
+
 
