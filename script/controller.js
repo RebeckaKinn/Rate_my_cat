@@ -9,7 +9,8 @@ function createProfile(){
                     img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
                     info: 'Skriv litt om deg selv',
                     id: userIndex});
-    model.currentUserNumber = userIndex;
+    model.userOnline = true;
+    model.currentUser.push(model.users[model.users.length]);
     profile();
 }
 
@@ -25,11 +26,11 @@ function logInnUser(){
     for(let i = 0; i< model.users.length; i++){
         if(password == model.users[i].password && username == model.users[i].name){
             model.currentUser.push(model.users[i]);
-            model.currentUserNumber = i;
+            model.userOnline = true;
             profile();
         }
     }
-        if(model.currentUserNumber === 1){
+        if(model.userOnline == false){
             password = '';
             username = '';
             model.site.innerHTML += /*HTML*/`
@@ -41,7 +42,7 @@ function logInnUser(){
 //DONE
 function logOut(){
     model.currentUser.splice(0, model.currentUser.length);
-    model.currentUserNumber = 1;
+    model.userOnline = false;
     frontPage();
 }
 

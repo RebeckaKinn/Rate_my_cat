@@ -63,14 +63,14 @@ function topRated(){
 }
 
 function profile(){
-    if(model.currentUser.length > 0){
+    if(model.userOnline == true){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
         <button onclick="uploadProfilePicture()">Upload profile picture</button>
-        <h3>Welcome to your profile ${model.users[model.currentUserNumber].name}</h3>
-        <div>${model.users[model.currentUserNumber].img}</div>
-        <p>${model.users[model.currentUserNumber].info}</p>
+        <h3>Welcome to your profile ${model.currentUser[0].name}</h3>
+        <div>${model.currentUser[0].img}</div>
+        <p>${model.currentUser[0].info}</p>
         <P>My cats</p>
         <div>image cat of user</div>
         <p>info about cat from user</p>
@@ -79,7 +79,8 @@ function profile(){
         `;
         //uploadCat not done
     
-    }else{
+    }
+    if(model.userOnline == false){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logIn()">Log in</button>
