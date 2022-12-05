@@ -1,5 +1,6 @@
 body{
     background-color: bisque;
+    font-size: 30px;
 }
 
 button{
@@ -7,10 +8,12 @@ button{
     background-color: bisque;
     border-radius: 20px;
     border-color: rgb(206, 183, 156);
+    font-size: 30px;
 }
 
 h1{
     font-family: 'Lucida Handwriting';
+    font-size: 90px;
 }
 
 .imageRating{

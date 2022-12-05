@@ -1,5 +1,4 @@
-//profile creation and logIn 
-//not tested/not done
+//Create profile DONE
 function createProfile(){
     let newPassword = document.getElementById(`newPasswordBox`).value;
     let newUsername = document.getElementById(`newUserNameBox`).value;

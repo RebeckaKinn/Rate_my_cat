@@ -1,6 +1,6 @@
 frontPage();
 function frontPage(){
-    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 260px; width: auto"/>';
+    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 500px; width: auto"/>';
     model.site.innerHTML = /*HTML*/`
     <h1>Rate My Pussy!</h1>
     <div>${frontImage}</div>
