@@ -20,12 +20,12 @@ function rating(){
         <p>${model.cats[model.currentCat].points}</p>
         <button onclick="nextCat('right')">--></button>
         `;
-           for(let j = 0; j < model.ratings.length; j++){
+           for(let j = 0; j < model.ratingNames.length; j++){
             model.site.innerHTML += /*HTML*/`
             <div class="slidecontainer">
             <div>${model.ratingNames[j]}</div> 
-            <input type="range" min="0" max="10" value="${model.ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
-            <div>${model.ratings[j]}</div>
+            <input type="range" min="0" max="10" value="${model.cats[model.currentCat].ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
+            <div>${model.cats[model.currentCat].ratings[j]}</div>
             </div>
         `;}
 }    
@@ -33,22 +33,24 @@ function rating(){
     //connection not done
 
 
+    //top rated DONE
 function topRated(){
+    topRatedSite();
     model.site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
     <h3>Top 3 rated:</h3>
     <br/>
-        <p>${model.cats[model.currentCat].name}</p>
-        <div>${model.cats[model.currentCat].img}</div>
-        <p>${model.cats[model.currentCat].points}</p>
+        <p>${model.cats[0].name}</p>
+        <div>${model.cats[0].img}</div>
+        <p>${model.cats[0].points}</p>
     
-        <p>${model.cats[model.currentCat].name}</p>
-        <div>c${model.cats[model.currentCat].img}</div>
-        <p>${model.cats[model.currentCat].points}</p>
+        <p>${model.cats[1].name}</p>
+        <div>c${model.cats[1].img}</div>
+        <p>${model.cats[1].points}</p>
 
-        <p>${model.cats[model.currentCat].name}</p>
-        <div>${model.cats[model.currentCat].img}</div>
-        <p>${model.cats[model.currentCat].points}</p>
+        <p>${model.cats[2].name}</p>
+        <div>${model.cats[2].img}</div>
+        <p>${model.cats[2].points}</p>
     <br/>
     <h3>All cats:</h3>
     `;
@@ -57,10 +59,8 @@ function topRated(){
         <p>${model.cats[i].name}</p>
         <div>${model.cats[i].img}</div>
         <p>${model.cats[i].points}</p>
-        `;
+    `;
     }
-    //points not done
-    //connection not done
 }
 
 function profile(){

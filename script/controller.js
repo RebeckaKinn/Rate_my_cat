@@ -35,15 +35,14 @@ function logOut(){
 }
 
 //rating
-//saved rating for user not done
+//saved rating for each cat DONE
 function updateRatings(newRating, number, cat){
-    model.ratings[number] = newRating;
-    model.cats[cat].points = (model.ratings[0] + model.ratings[1] + model.ratings[2] + model.ratings[3]) / 4;
+    model.cats[model.currentCat].ratings[number] = newRating;
+    model.cats[cat].points = (model.cats[model.currentCat].ratings[0] + model.cats[model.currentCat].ratings[1] + model.cats[model.currentCat].ratings[2] + model.cats[model.currentCat].ratings[3]) / 4;
     rating();
 };
 
-//tuggle which cat is visible
-//save points not done
+//tuggle which cat is visible DONE
 function nextCat(side){
     if(side == 'right'){
         model.currentCat++;
@@ -69,7 +68,7 @@ function saveChanges(){
 
 //check who is top rated (not done)
 function topRatedSite(){
-    for(let i = 0; i < model.cats.length; i++){}
-    topRated();
+    const result = model.cats.sort((a,b) => b.points - a.points).slice(0, 3)
+    console.log(result);
 }
 

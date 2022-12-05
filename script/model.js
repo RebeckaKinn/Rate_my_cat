@@ -59,8 +59,6 @@ const model = {
         ratings: [0, 0, 0, 0]},
     ],
 
-    ratings: [0, 0, 0, 0],
-
     ratingNames: ['Fur quality', 'Face cuteness', 'Shine and vibe', 'Tail beauty'],
 
     pushPoints: [],
