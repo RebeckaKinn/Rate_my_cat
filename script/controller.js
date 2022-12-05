@@ -10,7 +10,7 @@ function createProfile(){
                     info: 'Skriv litt om deg selv',
                     id: userIndex});
     model.userOnline = true;
-    model.currentUser.push(model.users[model.users.length]);
+    model.currentUser.push(model.users[model.users.length -1]);
     profile();
 }
 
