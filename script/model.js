@@ -59,7 +59,7 @@ const model = {
 
     ratingNames: ['Fur quality', 'Face cuteness', 'Shine and vibe', 'Tail beauty'],
 
-    currentCat: [],
+    currentCat: 0,
     currentUserNumber: 1,
     currentUser: [],
 
