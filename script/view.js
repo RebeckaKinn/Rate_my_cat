@@ -62,15 +62,15 @@ function topRated(){
     }
 }
 
-function profile(index){
+function profile(){
     if(model.currentUser.length > 0){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
         <button onclick="uploadProfilePicture()">Upload profile picture</button>
-        <h3>Welcome to your profile ${model.users[index].name}</h3>
-        <div>${model.users[index].img}</div>
-        <p>${model.users[index].info}</p>
+        <h3>Welcome to your profile ${model.users[model.currentUserNumber].name}</h3>
+        <div>${model.users[model.currentUserNumber].img}</div>
+        <p>${model.users[model.currentUserNumber].info}</p>
         <P>My cats</p>
         <div>image cat of user</div>
         <p>info about cat from user</p>

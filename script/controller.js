@@ -9,6 +9,7 @@ function createProfile(){
                     img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
                     info: 'Skriv litt om deg selv',
                     id: userIndex});
+    model.currentUserNumber = userIndex;
     profile();
 }
 
@@ -24,7 +25,8 @@ function logInnUser(){
     for(let i = 0; i< model.users.length; i++){
         if(password == model.users[i].password && username == model.users[i].name){
             model.currentUser.push(model.users[i]);
-            profile(i);
+            model.currentUserNumber = i;
+            profile();
         
         }if(username != model.users[i].name || password != model.users[i].password){
             password = '';
@@ -38,6 +40,7 @@ function logInnUser(){
 //DONE
 function logOut(){
     model.currentUser.splice(0, model.currentUser.length);
+    model.currentUserNumber = 0;
     frontPage();
 }
 
