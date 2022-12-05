@@ -27,20 +27,21 @@ function logInnUser(){
             model.currentUser.push(model.users[i]);
             model.currentUserNumber = i;
             profile();
-        
-        }if(username != model.users[i].name || password != model.users[i].password){
+        }
+    }
+        if(model.currentUserNumber === 1){
             password = '';
             username = '';
             model.site.innerHTML += /*HTML*/`
             <h3>Password or username is incorrect. Please try again.</h3>
             `;
         }
-    }
+   
 }
 //DONE
 function logOut(){
     model.currentUser.splice(0, model.currentUser.length);
-    model.currentUserNumber = 0;
+    model.currentUserNumber = 1;
     frontPage();
 }
 
