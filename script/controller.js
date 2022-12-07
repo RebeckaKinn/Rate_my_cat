@@ -37,29 +37,44 @@ function logInnUser(){
         `;
     }
 }
-
+//not done
 function getCatToOwner(){
     for(let j = 0; j < model.cats.length; j++){
-        if(model.currentUser.id == model.cats[j].owner){
-            model.catInfo += /*HTML*/`
-            <h3>My cat</h3>
+        if(model.currentUser[0].name == model.cats[j].owner){
+            model.catInfo = /*HTML*/`
             <h4>${model.cats[j].name}</h4>
             <div>${model.cats[j].img}</div>
             <p>Score: ${model.cats[j].points}</p>
             `;
+            return model.cats[j];
         }else{
             model.catInfo = /*HTML*/`<i>Du har ingen registrerte puser!</i>`;
         }
     }
-
 }
 
 //DONE
 function logOut(){
+    model.users.push(model.currentUser[0]);
     model.currentUser.splice(0, model.currentUser.length);
     model.userOnline = false;
-    model.userCat.splice(0, model.userCat.length);
     frontPage();
+}
+//write user info not done
+function updateInfoButton(){
+    let infoInput = document.getElementById(`userInfoBox`);
+    model.edit = !model.edit;
+    if(model.edit == true){
+        model.infoToUser = /*HTML*/`
+        <input type="text" id="userInfoBox" value="${model.currentUser[0].info}"/>
+        `;
+    }else{
+        model.currentUser[0].info = infoInput.value;
+        model.infoToUser = /*HTML*/`
+        <p>${model.currentUser[0].info}</p>
+        `;
+    }
+    profile();
 }
 
 //rating
@@ -100,7 +115,7 @@ function uploadCatImage(){
     uploadButton.addEventListener("click", function() {
         fileUpload.click();
         
-        fileUpload.addEventListener("change", function(){
+        fileUpload.addEventListener("change", function uploadCatImage(){
             imageName.value = fileUpload.value;
             const reader = new FileReader();
             reader.addEventListener("load", () => {
@@ -126,24 +141,3 @@ function uploadCat(){
     return model.cats;
 }
 
-//upload profile picture not done
-function uploadProfilePicture(){
-    let uploadUserImage = document.getElementById(`uploadUserImage`);
-    let uploadFileUser = document.getElementById(`uploadFileUser`);
-    let newUserImage = '';
-    uploadUserImage.addEventListener("click", function(){
-        uploadFileUser.click();
-        uploadFileUser.addEventListener("change", function(){
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                newUserImage = reader.result;
-            });
-            reader.readAsDataURL(this.files[0]);
-        });
-    })
-    model.currentUser[0].push(
-        {img: `<img src="${newUserImage}" style="height: 50px; width: auto"/>`}
-        );
-    console.log(model.users.img);
-    return model.users;
-}

@@ -72,12 +72,14 @@ function profile(){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
-        <input type="file" id="uploadFileUser" accepted="image/jpeg, image/png, image/jpg" hidden="hidden"/>
-        <button onclick="uploadProfilePicture()" id="uploadUserImage">Upload profile picture</button>
+
         <h3>Welcome to your profile ${model.currentUser[0].name}</h3>
         <div>${model.currentUser[0].img}</div>
-        <p>${model.currentUser[0].info}</p>
+        
+        <div>${model.infoToUser}</div>
+        <button onclick="updateInfoButton()">update info</button>
         <div>${model.catInfo}</div>
+
         <p>Add a new cat!</p>
         <div>Your cats name</div>
         <input type="text" id="newNameInput"/>

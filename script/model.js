@@ -35,19 +35,19 @@ const model = {
         {name: 'Ståle', 
         password: '123',
         img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
-        info: 'Skriv litt om deg selv',
+        info: '',
         id: 1},
 
         {name: 'Marie', 
         password: 'abc',
         img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
-        info: 'Skriv litt om deg selv',
+        info: '',
         id: 2},
 
         {name: 'Heine', 
         password: '123abc',
         img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
-        info: 'Skriv litt om deg selv',
+        info: '',
         id: 3},
     ],
 
@@ -63,8 +63,10 @@ const model = {
     userOnline: false,
     currentUser: [],
     userCat: [],
-    catInfo: 'tomt her',
+    catInfo: '',
     newCatImg: "",
     newCatName: '',
+    infoToUser: '',
+    edit: false,
 
 };
