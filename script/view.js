@@ -37,48 +37,55 @@ function topRated(){
     topRatedSite();
     model.site.innerHTML = /*HTML*/`
     <button onclick="frontPage()">Back</button>
-    <h3>Top 3 rated:</h3>
+    <h2>Top 3 rated:</h2>
     <br/>
-        <p>${model.cats[0].name}</p>
+        <h4>${model.cats[0].name}</h4>
+        <p>Eier: ${model.cats[0].owner}</p>
         <div>${model.cats[0].img}</div>
-        <p>${model.cats[0].points}</p>
+        <p>Score: ${model.cats[0].points}</p>
     
-        <p>${model.cats[1].name}</p>
-        <div>c${model.cats[1].img}</div>
-        <p>${model.cats[1].points}</p>
+        <h4>${model.cats[1].name}</h4>
+        <p>Eier: ${model.cats[1].owner}</p>
+        <div>${model.cats[1].img}</div>
+        <p>Score: ${model.cats[1].points}</p>
 
-        <p>${model.cats[2].name}</p>
+        <h4>${model.cats[2].name}</h4>
+        <p>Eier: ${model.cats[2].owner}</p>
         <div>${model.cats[2].img}</div>
-        <p>${model.cats[2].points}</p>
+        <p>Score: ${model.cats[2].points}</p>
     <br/>
-    <h3>All cats:</h3>
+    <h2>All cats:</h2>
     `;
     for(let i = 0; i < model.cats.length; i++){
         model.site.innerHTML += /*HTML*/`
-        <p>${model.cats[i].name}</p>
+        <h4>${model.cats[i].name}</h4>
+        <p>Eier: ${model.cats[i].owner}</p>
         <div>${model.cats[i].img}</div>
-        <p>${model.cats[i].points}</p>
+        <p>Score: ${model.cats[i].points}</p>
     `;
     }
 }
 
 function profile(){
     if(model.userOnline == true){
+        getCatToOwner();
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
-        <button onclick="uploadProfilePicture()">Upload profile picture</button>
+        <input type="file" id="uploadFileUser" accepted="image/jpeg, image/png, image/jpg" hidden="hidden"/>
+        <button onclick="uploadProfilePicture()" id="uploadUserImage">Upload profile picture</button>
         <h3>Welcome to your profile ${model.currentUser[0].name}</h3>
         <div>${model.currentUser[0].img}</div>
         <p>${model.currentUser[0].info}</p>
-        <P>My cats</p>
-        <div>image cat of user</div>
-        <p>info about cat from user</p>
-        <div>current cat rating</div>
-        <button onclick="uploadCat()">Upload cat</button>
+        <div>${model.catInfo}</div>
+        <p>Add a new cat!</p>
+        <div>Your cats name</div>
+        <input type="text" id="newNameInput"/>
+        <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg" hidden="hidden"/>
+        <button onclick="uploadCatImage()" id="uploadButton">Upload cat image</button>
+        <span id="imageName"></span><br/>
+        <button onclick="uploadCat()">Add cat</button>
         `;
-        //uploadCat not done
-    
     }
     if(model.userOnline == false){
         model.site.innerHTML = /*HTML*/`
@@ -88,8 +95,7 @@ function profile(){
         <button onclick="createAccount()">Create account</button>
         `;
         }
-    //login not done
-    //createaccount not tested
+
 }
 
 function logIn(){
@@ -101,8 +107,6 @@ function logIn(){
     <input type="text" id="passwordBox"/>
     <button onclick="logInnUser()">Log in</button>
     `;
-    //connection of user not done
-    //right or wrong password/username not done
 }
 
 function createAccount(){
@@ -114,6 +118,5 @@ function createAccount(){
     <input type="text" id="newPasswordBox"/>
     <button onclick="createProfile()">Create Profile</button>
     `;
-    //createProfile not done
     //connection to written input to users not done
 }
