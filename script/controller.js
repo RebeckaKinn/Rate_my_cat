@@ -1,4 +1,4 @@
-//Create profile DONE
+//Create profile 
 function createProfile(){
     let newPassword = document.getElementById(`newPasswordBox`).value;
     let newUsername = document.getElementById(`newUserNameBox`).value;
@@ -13,12 +13,7 @@ function createProfile(){
     profile();
 }
 
-//not done
-function saveChanges(){
-    
-
-}
-//not tested
+//log inn
 function logInnUser(){
     let password = document.getElementById(`passwordBox`).value;
     let username = document.getElementById(`usernameBox`).value;
@@ -37,7 +32,7 @@ function logInnUser(){
         `;
     }
 }
-//not done
+//show users cat not done
 function getCatToOwner(){
     for(let j = 0; j < model.cats.length; j++){
         if(model.currentUser[0].name == model.cats[j].owner){
@@ -53,14 +48,15 @@ function getCatToOwner(){
     }
 }
 
-//DONE
+//log out
 function logOut(){
     model.users.push(model.currentUser[0]);
     model.currentUser.splice(0, model.currentUser.length);
     model.userOnline = false;
     frontPage();
 }
-//write user info not done
+
+//personal info
 function updateInfoButton(){
     let infoInput = document.getElementById(`userInfoBox`);
     model.edit = !model.edit;
@@ -77,14 +73,14 @@ function updateInfoButton(){
     profile();
 }
 
-//rating
-//saved rating for each cat DONE
+//save rating for each cat
 function updateRatings(newRating, number, cat){
     model.cats[model.currentCat].ratings[number] = newRating;
     model.cats[cat].points = (model.cats[model.currentCat].ratings[0] + model.cats[model.currentCat].ratings[1] + model.cats[model.currentCat].ratings[2] + model.cats[model.currentCat].ratings[3]) / 4;
     rating();
 };
-//tuggle which cat is visible DONE
+
+//tuggle which cat is visible 
 function nextCat(side){
     if(side == 'right'){
         model.currentCat++;
@@ -101,31 +97,27 @@ function nextCat(side){
     rating();
     return model.cats[model.currentCat];
 }
-//check who is top rated DONE
+
+//check who is top rated 
 function topRatedSite(){
     model.cats.sort((a,b) => b.points - a.points).slice(0, 3)
 }
 
-//new cat upload DONE
+//new cat upload 
 function uploadCatImage(){
     const fileUpload = document.getElementById(`uploadFile`);
-    const uploadButton = document.getElementById(`uploadButton`);
-    const imageName = document.getElementById(`imageName`);
-    //Når knappen blir trykket så trigger inputten som laster opp fil
-    uploadButton.addEventListener("click", function() {
-        fileUpload.click();
-        
-        fileUpload.addEventListener("change", function uploadCatImage(){
-            imageName.value = fileUpload.value;
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                model.newCatImg = reader.result;
-            });
-            reader.readAsDataURL(this.files[0]);
-        }); 
-    });
+    fileUpload.addEventListener("change", function(){
+        imageName.value = fileUpload.value;
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            model.newCatImg = reader.result;
+        });
+        reader.readAsDataURL(this.files[0]);
+    }); 
 }
 
+
+//må ha noe som indikerer at man har lagt til en katt. 
 function uploadCat(){
     let newNameInput = document.getElementById(`newNameInput`);
     model.newCatName = newNameInput.value;
@@ -138,6 +130,7 @@ function uploadCat(){
         ratings: [0, 0, 0, 0],
         id: catIndex}
         );
+    profile();
     return model.cats;
 }
 

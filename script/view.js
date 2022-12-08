@@ -8,7 +8,6 @@ function frontPage(){
     <button onclick="topRated()">Topp rated</button>
     <button onclick="profile()">Profile</button>
     `;
-    //front image not done
 }
 
 function rating(){
@@ -20,7 +19,7 @@ function rating(){
         <p>${model.cats[model.currentCat].points}</p>
         <button onclick="nextCat('right')">--></button>
         `;
-           for(let j = 0; j < model.ratingNames.length; j++){
+        for(let j = 0; j < model.ratingNames.length; j++){
             model.site.innerHTML += /*HTML*/`
             <div class="slidecontainer">
             <div>${model.ratingNames[j]}</div> 
@@ -28,11 +27,9 @@ function rating(){
             <div>${model.cats[model.currentCat].ratings[j]}</div>
             </div>
         `;}
-}    
-    //connection between users and cats not done
+}
+   
 
-
-    //top rated DONE
 function topRated(){
     topRatedSite();
     model.site.innerHTML = /*HTML*/`
@@ -72,6 +69,7 @@ function profile(){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
         <button onclick="logOut()">Log out</button>
+        <button onclick="uploadCatImage()">Add a new cat!</button>
 
         <h3>Welcome to your profile ${model.currentUser[0].name}</h3>
         <div>${model.currentUser[0].img}</div>
@@ -79,14 +77,6 @@ function profile(){
         <div>${model.infoToUser}</div>
         <button onclick="updateInfoButton()">update info</button>
         <div>${model.catInfo}</div>
-
-        <p>Add a new cat!</p>
-        <div>Your cats name</div>
-        <input type="text" id="newNameInput"/>
-        <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg" hidden="hidden"/>
-        <button onclick="uploadCatImage()" id="uploadButton">Upload cat image</button>
-        <span id="imageName"></span><br/>
-        <button onclick="uploadCat()">Add cat</button>
         `;
     }
     if(model.userOnline == false){
@@ -96,8 +86,17 @@ function profile(){
         <p>Not have an account yet?</p>
         <button onclick="createAccount()">Create account</button>
         `;
-        }
+    }
+}
 
+function uploadCatImage(){
+    model.site.innerHTML = /*HTML*/`
+    <h3>Add a new cat!</h3>
+    <input type="text" id="newNameInput" value="Insert your cats name" onfocus="this.value = this.value=='Insert your cats name'?'':this.value;" onblur="this.value = this.value==''?'Insert your cats name':this.value;"/>
+    <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
+    <button onclick="uploadCat()">Add cat</button>
+    `;
+    uploadCatImage();
 }
 
 function logIn(){
@@ -120,5 +119,4 @@ function createAccount(){
     <input type="text" id="newPasswordBox"/>
     <button onclick="createProfile()">Create Profile</button>
     `;
-    //connection to written input to users not done
 }
