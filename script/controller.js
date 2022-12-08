@@ -106,7 +106,7 @@ function topRatedSite(){
 //new cat upload 
 function uploadCatImage(){
     const fileUpload = document.getElementById(`uploadFile`);
-    fileUpload.addEventListener("change", function(){
+    fileUpload.addEventListener("change", function() {
         imageName.value = fileUpload.value;
         const reader = new FileReader();
         reader.addEventListener("load", () => {
@@ -115,9 +115,7 @@ function uploadCatImage(){
         reader.readAsDataURL(this.files[0]);
     }); 
 }
-
-
-//må ha noe som indikerer at man har lagt til en katt. 
+ 
 function uploadCat(){
     let newNameInput = document.getElementById(`newNameInput`);
     model.newCatName = newNameInput.value;
@@ -130,7 +128,7 @@ function uploadCat(){
         ratings: [0, 0, 0, 0],
         id: catIndex}
         );
-    profile();
+        profile();
     return model.cats;
 }
 

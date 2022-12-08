@@ -1,19 +1,20 @@
 frontPage();
 function frontPage(){
-    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 500px; width: auto"/>';
+    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 400px; width: auto; border-radius: 80px;" />';
     model.site.innerHTML = /*HTML*/`
-    <h1>Rate My Pussy!</h1>
-    <div>${frontImage}</div>
-    <button onclick="rating()">Rating</button>
-    <button onclick="topRated()">Topp rated</button>
-    <button onclick="profile()">Profile</button>
+    <div class="headline"><h1>Rate My Pussy!</h1></div>
+    <div class="frontPage">${frontImage}</div>
+    <div class="frontPageButtons"><button class="buttonMainPage" onclick="rating()">Rating</button>
+    <button class="buttonMainPage" onclick="topRated()">Topp rated</button>
+    <button class="buttonMainPage" onclick="logIn()">Profile</button>
+    </div>
     `;
 }
 
 function rating(){
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
-        <p>${model.cats[model.currentCat].name}</p>
+        <div class="frontImage">${model.cats[model.currentCat].name}</div>
         <button onclick="nextCat('left')"><--</button>
         <div class="imageRating">${model.cats[model.currentCat].img}</div>
         <p>${model.cats[model.currentCat].points}</p>
@@ -64,7 +65,6 @@ function topRated(){
 }
 
 function profile(){
-    if(model.userOnline == true){
         getCatToOwner();
         model.site.innerHTML = /*HTML*/`
         <button onclick="frontPage()">Back</button>
@@ -78,15 +78,6 @@ function profile(){
         <button onclick="updateInfoButton()">update info</button>
         <div>${model.catInfo}</div>
         `;
-    }
-    if(model.userOnline == false){
-        model.site.innerHTML = /*HTML*/`
-        <button onclick="frontPage()">Back</button>
-        <button onclick="logIn()">Log in</button>
-        <p>Not have an account yet?</p>
-        <button onclick="createAccount()">Create account</button>
-        `;
-    }
 }
 
 function uploadCatImage(){
@@ -96,18 +87,24 @@ function uploadCatImage(){
     <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
     <button onclick="uploadCat()">Add cat</button>
     `;
-    uploadCatImage();
+    
 }
 
 function logIn(){
-    model.site.innerHTML = /*HTML*/`
-    <button onclick="frontPage()">Back</button>
-    <div>Username:</div>
-    <input type="text" id="usernameBox"/>
-    <div>Password:</div>
-    <input type="text" id="passwordBox"/>
-    <button onclick="logInnUser()">Log in</button>
-    `;
+    if(model.userOnline == true){
+        profile();
+    }else{
+        model.site.innerHTML = /*HTML*/`
+        <button onclick="frontPage()">Back</button>
+        <div>Username:</div>
+        <input type="text" id="usernameBox"/>
+        <div>Password:</div>
+        <input type="text" id="passwordBox"/>
+        <button onclick="logInnUser()">Log in</button>
+        <p>Not have an account yet?</p>
+        <button onclick="createAccount()">Create account</button>
+        `;
+    };
 }
 
 function createAccount(){

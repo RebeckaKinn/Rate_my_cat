@@ -1,20 +1,48 @@
 body{
-    background-color: bisque;
+    background-color: #173F5F;
     font-size: 30px;
 }
 
-button{
-    color: rgba(97, 81, 63, 0.651);
-    background-color: bisque;
-    border-radius: 20px;
-    border-color: rgb(206, 183, 156);
-    font-size: 30px;
+div.container{
+    display: grid; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 25%, 25%, 25%, 25% 25%, 25%;
+    grid-template-rows: 25%, 25%, 25%, 25%;
+    grid-template-areas: 
+        'empty header header header header empty'
+        'empty body body body body empty'
+        'empty footer footer footer footer empty';
 }
 
-h1{
+.headline{
+    grid-area: header;
     font-family: 'Lucida Handwriting';
-    font-size: 90px;
+    font-size: 40px;
+    color: #F6D55C;
 }
+
+.frontPage{
+    grid-area: body;
+    align-self: center;
+}
+
+.frontPageButtons{
+    grid-area: body;
+}
+
+.buttonMainPage{
+    color: #000000;
+    background-color:#3CAEA3;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 25px;
+    padding: 10px;
+}
+
 
 .imageRating{
     width: auto;
