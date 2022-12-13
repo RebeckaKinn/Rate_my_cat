@@ -215,7 +215,6 @@ div.container{
     't2side t2mid t2end'
     't3side t3mid t3end'
     't4side t4mid t4end';
-    
 }
 
 .top3Ratedtitle{
@@ -223,10 +222,121 @@ div.container{
     align-self: end;
     font-size: 50px;
     font-family: 'Lucida Handwriting';
+    color: #F6D55C;
 }
 
 .TopRatedName1{
-    grid-area: body;
-    justify-self: start;
+    grid-area: t1side;
+    font-family: 'Bahnschrift';
+    font-size: 30px;
+}
+
+.TopRatedOwner1{
+    grid-area: t2side; 
+    font-family: 'Bahnschrift';
+    font-size: 20px;
+}
+
+.TopRatedCat1{
+    grid-area: t3side;
+    justify-self: center;
+    align-self: center;
+}
+
+.TopRatedScore1{
+    grid-area: t4side;
     align-self: start;
+    font-family: 'Bahnschrift';
+    font-size: 25px;
+}
+
+
+.TopRatedName2{
+    grid-area: t1mid;
+    font-family: 'Bahnschrift';
+    font-size: 30px;
+}
+
+.TopRatedOwner2{
+    grid-area: t2mid; 
+    font-family: 'Bahnschrift';
+    font-size: 20px;
+}
+
+.TopRatedCat2{
+    grid-area: t3mid;
+    justify-self: center;
+    align-self: center;
+}
+
+.TopRatedScore2{
+    grid-area: t4mid;
+    align-self: start;
+    font-family: 'Bahnschrift';
+    font-size: 25px;
+}
+
+.TopRatedName3{
+    grid-area: t1end;
+    font-family: 'Bahnschrift';
+    font-size: 30px;
+}
+
+.TopRatedOwner3{
+    grid-area: t2end; 
+    font-family: 'Bahnschrift';
+    font-size: 20px;
+}
+
+.TopRatedCat3{
+    grid-area: t3end;
+    justify-self: center;
+    align-self: center;
+}
+
+.TopRatedScore3{
+    grid-area: t4end;
+    align-self: start;
+    font-family: 'Bahnschrift';
+    font-size: 25px;
+}
+
+.allCatsratings{
+    grid-area: footer;
+    align-self: start;
+    font-size: 30px;
+    font-family: 'Lucida Handwriting';
+    color: #F6D55C;
+}
+
+
+.ratedAllTime{
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+
+    grid-template-columns: repeat(200px 200px 200px);
+    grid-template-rows: repeat(200px 200px 200px);
+    grid-template-areas: 
+    'img img content1'
+    'img img content2'
+    'img img content3';
+    
+    
+}
+
+.allCatsRatedName{
+    grid-area: content1;
+}
+
+.allCatsRatedOwner{
+    grid-area: content2;
+}
+
+.allCatsRatedImg{
+   grid-area: img;
+}
+
+.allCatsRatedPoints{
+    grid-area: content3;
 }

@@ -38,7 +38,7 @@ function getCatToOwner(){
         if(model.currentUser[0].name == model.cats[j].owner){
             model.catInfo = /*HTML*/`
             <h4>${model.cats[j].name}</h4>
-            <div>${model.cats[j].img}</div>
+            <div><img src="${model.cats[j].img}" style="height: 300px; width: auto"/></div>
             <p>Score: ${model.cats[j].points}</p>
             `;
             return model.cats[j];

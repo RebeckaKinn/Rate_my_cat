@@ -40,28 +40,30 @@ function topRated(){
     <div class="top3Rated">
         <h4 class="TopRatedName1">${model.cats[0].name}</h4>
         <p class="TopRatedOwner1">Eier: ${model.cats[0].owner}</p>
-        <div class="TopRatedCat1"><img src="${model.cats[0].img}" style="height: 300px; width: auto"/></div>
+        <div class="TopRatedCat1"><img src="${model.cats[0].img}" style="height: auto; width: 190px"/></div>
         <p class="TopRatedScore1">Score: ${model.cats[0].points}</p>
     
         <h4 class="TopRatedName2">${model.cats[1].name}</h4>
         <p class="TopRatedOwner2">Eier: ${model.cats[1].owner}</p>
-        <div class="TopRatedCat2"><img src="${model.cats[1].img}" style="height: 300px; width: auto"/></div>
+        <div class="TopRatedCat2"><img src="${model.cats[1].img}" style="height: auto; width: 190px"/></div>
         <p class="TopRatedScore2">Score: ${model.cats[1].points}</p>
 
         <h4 class="TopRatedName3">${model.cats[2].name}</h4>
         <p class="TopRatedOwner3">Eier: ${model.cats[2].owner}</p>
-        <div class="TopRatedCat3"><img src="${model.cats[2].img}" style="height: 300px; width: auto"/></div>
+        <div class="TopRatedCat3"><img src="${model.cats[2].img}" style="height: auto; width: 190px"/></div>
         <p class="TopRatedScore3">Score: ${model.cats[2].points}</p>
     <br/>
     </div>
-    <h2>All cats:</h2>
+    <h2 class="allCatsratings">All cats:</h2>
     `;
     for(let i = 0; i < model.cats.length; i++){
         model.site.innerHTML += /*HTML*/`
-        <h4>${model.cats[i].name}</h4>
-        <p>Eier: ${model.cats[i].owner}</p>
-        <div>${model.cats[i].img}</div>
-        <p>Score: ${model.cats[i].points}</p>
+        <div class="ratedAllTime">
+        <h4 class="allCatsRatedName">${model.cats[i].name}</h4>
+        <p class="allCatsRatedOwner">Eier: ${model.cats[i].owner}</p>
+        <div class="allCatsRatedImg"><img src="${model.cats[i].img}" style="height: auto; width: 200px"/></div>
+        <p class="allCatsRatedPoints">Score: ${model.cats[i].points}</p>
+        </div>
     `;
     }
 }
