@@ -10,7 +10,7 @@ div.container{
     display: grid; 
     justify-items: center;
     grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 180px 180px 180px 180px 180px;
+    grid-template-rows: 200px 210px 210px 140px 140px;
     grid-template-areas: 
         'header header header'
         'body body body'
@@ -99,13 +99,18 @@ div.container{
 .ratingPoints{
     grid-area: body;
     align-self: end;
+    justify-self: center;
+    color: #ED553B;
+    font-family: 'Bahnschrift';
+    font-size: 55px;
 }
 
 .ratingName{
     grid-area: header;
     align-self: end;
     justify-self: center;
-    font-size: 80px;
+    font-size: 70px;
+    font-family: 'Lucida Handwriting';
 }
 
 .mainRating{
@@ -115,7 +120,7 @@ div.container{
     
     display: grid; 
     justify-items: center;
-    grid-template-columns: 50px 166px 166px 166px 50px;
+    grid-template-columns: 50px 155px 188px 155px 50px;
     grid-template-rows: 50px 50px 50px 50px;
     grid-template-areas: 
     't0 t1side t1mid t1end 0t'
@@ -127,16 +132,101 @@ div.container{
 
 .ratingSliderNames0{
     grid-area: t1side;
-    justify-self: start;
-
 }
 
 .slideBar0{
     grid-area: t1mid;
-
 }
 
 .barRatings0{
     grid-area: t1end;
+}
 
+
+
+.ratingSliderNames1{
+    grid-area: t2side;
+}
+
+.slideBar1{
+    grid-area: t2mid;
+}
+
+.barRatings1{
+    grid-area: t2end;
+}
+
+
+.ratingSliderNames2{
+    grid-area: t3side;
+}
+
+.slideBar2{
+    grid-area: t3mid;
+}
+
+.barRatings2{
+    grid-area: t3end;
+}
+
+
+
+.ratingSliderNames3{
+    grid-area: t4side;
+}
+
+.slideBar3{
+    grid-area: t4mid;
+}
+
+.barRatings3{
+    grid-area: t4end;
+}
+
+.ratingSliderNamesVisuals{
+    justify-self: start;
+    color:#3CAEA3;
+    font-size: 23px;
+    font-family: 'Bahnschrift';
+}
+
+.barRatingVisuals{
+    color: #F6D55C;
+    font-family: 'Bahnschrift';
+    font-size: 40px;
+}
+
+.sliderBarVisuals{
+    width: 200px;
+    height: 20px;
+}
+
+.top3Rated{
+    grid-area: body;
+    max-width: 600px;
+    margin: 0 auto;
+    
+    display: grid; 
+    justify-items: center;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 50px 50px 200px 50px;
+    grid-template-areas: 
+    't1side t1mid t1end'
+    't2side t2mid t2end'
+    't3side t3mid t3end'
+    't4side t4mid t4end';
+    
+}
+
+.top3Ratedtitle{
+    grid-area: header;
+    align-self: end;
+    font-size: 50px;
+    font-family: 'Lucida Handwriting';
+}
+
+.TopRatedName1{
+    grid-area: body;
+    justify-self: start;
+    align-self: start;
 }

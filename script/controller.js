@@ -124,7 +124,7 @@ function uploadCat(){
     let catIndex = model.cats.length + 1;
     model.cats.push(
         {name: model.newCatName, 
-        img: `<img src="${model.newCatImg}" style="height: 200px; width: auto"/>`, 
+        img: `<img src="${model.newCatImg}" style="height: 300px; width: auto"/>`, 
         points: 0,
         owner: model.currentUser[0].name,
         ratings: [0, 0, 0, 0],

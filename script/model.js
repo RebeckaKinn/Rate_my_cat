@@ -3,28 +3,28 @@ const model = {
 
     cats: [
         {name: 'Pusifer', 
-        img: '<img src="img/ståles_pus.jpg" style="height: 250px; width: auto"/>', 
+        img: 'img/ståles_pus.jpg', 
         points: 0,
         owner: 'Ståle',
         ratings: [0, 0, 0, 0],
         id: 1},
 
         {name: 'Jasmine', 
-        img: '<img src="img/marie_jasmine.jpg" style="height: 250px; width: auto"/>', 
+        img: 'img/marie_jasmine.jpg', 
         points: 0,
         owner: 'Marie',
         ratings: [0, 0, 0, 0],
         id: 2},
 
         {name: 'Mia', 
-        img: '<img src="img/mia.png" style="height: 250px; width: auto"/>', 
+        img: 'img/mia.png', 
         points: 0,
         owner: 'Ståle',
         ratings: [0, 0, 0, 0],
         id: 3},
 
         {name: 'Rolf', 
-        img: '<img src="img/rolf.png" style="height: 250px; width: auto"/>', 
+        img: 'img/rolf.png', 
         points: 0,
         owner: 'Heine',
         ratings: [0, 0, 0, 0],
