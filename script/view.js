@@ -3,7 +3,7 @@ function frontPage(){
     const frontImage = '<img src="img/mustache_cat.jpg" style="height: 400px; width: auto; border-radius: 80px;" />';
     model.site.innerHTML = /*HTML*/`
     <div class="headline"><h1>Rate My Pussy!</h1></div>
-    <div class="frontPage">${frontImage}</div>
+    <div class="frontImage">${frontImage}</div>
     <div class="frontPageButtons"><button class="buttonMainPage" onclick="rating()">Rating</button>
     <button class="buttonMainPage" onclick="topRated()">Topp rated</button>
     <button class="buttonMainPage" onclick="logIn()">Profile</button>
@@ -13,21 +13,21 @@ function frontPage(){
 
 function rating(){
         model.site.innerHTML = /*HTML*/`
-        <button onclick="frontPage()">Back</button>
-        <div class="frontImage">${model.cats[model.currentCat].name}</div>
-        <button onclick="nextCat('left')"><--</button>
+        <button class="backButton" onclick="frontPage()">Back</button>
+        <div class="ratingName">${model.cats[model.currentCat].name}</div>
+        <button class="leftArrow" onclick="nextCat('left')"><--</button>
         <div class="imageRating">${model.cats[model.currentCat].img}</div>
-        <p>${model.cats[model.currentCat].points}</p>
-        <button onclick="nextCat('right')">--></button>
+        <p class="ratingPoints">${model.cats[model.currentCat].points}</p>
+        <button class="rightArrow" onclick="nextCat('right')">--></button>
+        <div class="mainRating">
         `;
         for(let j = 0; j < model.ratingNames.length; j++){
             model.site.innerHTML += /*HTML*/`
-            <div class="slidecontainer">
-            <div>${model.ratingNames[j]}</div> 
-            <input type="range" min="0" max="10" value="${model.cats[model.currentCat].ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
-            <div>${model.cats[model.currentCat].ratings[j]}</div>
-            </div>
-        `;}
+            <div class="ratingSliderNames${j}">${model.ratingNames[j]}</div> 
+            <input class="slideBar${j}" type="range" min="0" max="10" value="${model.cats[model.currentCat].ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
+            <div class="barRatings${j}">${model.cats[model.currentCat].ratings[j]}</div>
+            `;}
+        model.site.innerHTML += `</div>`;
 }
    
 

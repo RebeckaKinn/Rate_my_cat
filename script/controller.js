@@ -115,6 +115,8 @@ function uploadCatImage(){
         reader.readAsDataURL(this.files[0]);
     }); 
 }
+
+
  
 function uploadCat(){
     let newNameInput = document.getElementById(`newNameInput`);

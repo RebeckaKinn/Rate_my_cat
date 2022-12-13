@@ -4,34 +4,54 @@ body{
 }
 
 div.container{
+    max-width: 600px;
+    margin: 0 auto;
+
     display: grid; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 25%, 25%, 25%, 25% 25%, 25%;
-    grid-template-rows: 25%, 25%, 25%, 25%;
+    justify-items: center;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 180px 180px 180px 180px 180px;
     grid-template-areas: 
-        'empty header header header header empty'
-        'empty body body body body empty'
-        'empty footer footer footer footer empty';
+        'header header header'
+        'body body body'
+        'body body body'
+        'footer footer footer'
+        'footer footer footer';
+}
+
+.backButton{
+    grid-area: header;
+    align-self: start;
+    justify-self: start;
+    color: #000000;
+    background-color:#ED553B;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
 }
 
 .headline{
     grid-area: header;
+    align-self: center;
+    justify-self: center;
     font-family: 'Lucida Handwriting';
-    font-size: 40px;
+    font-size: 30px;
     color: #F6D55C;
+    width: fit-content;
+    height: fit-content;
 }
 
-.frontPage{
+.frontImage{
     grid-area: body;
     align-self: center;
+    
 }
 
 .frontPageButtons{
-    grid-area: body;
+    grid-area: footer;
+    align-self: start;
 }
 
 .buttonMainPage{
@@ -42,10 +62,81 @@ div.container{
     font-size: 25px;
     padding: 10px;
 }
-
-
 .imageRating{
+    grid-area: body;
+    align-self: start;
     width: auto;
-    height: 200px;
+    height: 20px;
 }
 
+.leftArrow{
+    grid-area: body;
+    justify-self: start;
+    align-self: center;
+    color: #000000;
+    background-color:#F6D55C;
+    border-radius: 20px;
+    border-color:#20639B;
+    font-size: 25px;
+    padding: 10px;
+    height: 80px;
+
+}
+
+.rightArrow{
+    grid-area: body;
+    align-self: center;
+    justify-self: end;
+    color: #000000;
+    background-color:#F6D55C;
+    border-radius: 20px;
+    border-color:#20639B;
+    font-size: 25px;
+    padding: 10px;
+    height: 80px;
+}
+
+.ratingPoints{
+    grid-area: body;
+    align-self: end;
+}
+
+.ratingName{
+    grid-area: header;
+    align-self: end;
+    justify-self: center;
+    font-size: 80px;
+}
+
+.mainRating{
+    grid-area: footer;
+    max-width: 600px;
+    margin: 0 auto;
+    
+    display: grid; 
+    justify-items: center;
+    grid-template-columns: 50px 166px 166px 166px 50px;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-template-areas: 
+    't0 t1side t1mid t1end 0t'
+    't0 t2side t2mid t2end 0t'
+    't0 t3side t3mid t3end 0t'
+    't0 t4side t4mid t4end 0t';
+    
+}
+
+.ratingSliderNames0{
+    grid-area: t1side;
+    justify-self: start;
+
+}
+
+.slideBar0{
+    grid-area: t1mid;
+
+}
+
+.barRatings0{
+    grid-area: t1end;
+
+}
