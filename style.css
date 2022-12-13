@@ -247,7 +247,8 @@ div.container{
     grid-area: t4side;
     align-self: start;
     font-family: 'Bahnschrift';
-    font-size: 25px;
+    font-size: 50px;
+    color: #ED553B;
 }
 
 
@@ -273,7 +274,8 @@ div.container{
     grid-area: t4mid;
     align-self: start;
     font-family: 'Bahnschrift';
-    font-size: 25px;
+    font-size: 50px;
+    color: #ED553B;
 }
 
 .TopRatedName3{
@@ -298,7 +300,8 @@ div.container{
     grid-area: t4end;
     align-self: start;
     font-family: 'Bahnschrift';
-    font-size: 25px;
+    font-size: 50px;
+    color: #ED553B;
 }
 
 .allCatsratings{
@@ -313,30 +316,39 @@ div.container{
 .ratedAllTime{
     max-width: 600px;
     margin: 0 auto;
+    grid-column-start: footer;
     display: grid;
-
-    grid-template-columns: repeat(200px 200px 200px);
-    grid-template-rows: repeat(200px 200px 200px);
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(4, 70px);
     grid-template-areas: 
     'img img content1'
     'img img content2'
-    'img img content3';
-    
-    
+    'img img content3'
+    'img img content4';  
 }
 
 .allCatsRatedName{
     grid-area: content1;
+    font-family: 'Bahnschrift';
+    font-size: 30px;
+    padding-left: 20px;
 }
-
 .allCatsRatedOwner{
     grid-area: content2;
+    font-family: 'Bahnschrift';
+    font-size: 20px;
+    padding-left: 20px;
+    color: #3CAEA3;
 }
-
+.allCatsRatedPoints{
+    grid-area: content2;
+    align-self: start;
+    font-family: 'Bahnschrift';
+    font-size: 60px;
+    padding-left: 20px;
+    color: #ED553B;
+}
 .allCatsRatedImg{
    grid-area: img;
-}
-
-.allCatsRatedPoints{
-    grid-area: content3;
+   justify-self: end;
 }
