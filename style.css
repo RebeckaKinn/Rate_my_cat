@@ -10,7 +10,7 @@ div.container{
     display: grid; 
     justify-items: center;
     grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 200px 210px 210px 140px 140px;
+    grid-template-rows: 200px 210px 210px 140px auto;
     grid-template-areas: 
         'header header header'
         'body body body'
@@ -349,6 +349,6 @@ div.container{
     color: #ED553B;
 }
 .allCatsRatedImg{
-   grid-area: img;
-   justify-self: end;
+    grid-area: img;
+    justify-self: end;
 }
