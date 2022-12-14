@@ -67,30 +67,31 @@ function topRated(){
     `;
     }
 }
-
+//not done css
 function profile(){
         getCatToOwner();
         model.site.innerHTML = /*HTML*/`
-        <button onclick="frontPage()">Back</button>
-        <button onclick="logOut()">Log out</button>
-        <button onclick="uploadCatImage()">Add a new cat!</button>
+        <button class="backButton" onclick="frontPage()">Back</button>
+        <button class="LogOutButton" onclick="logOut()">Log out</button>
+        <button class="UploadCatImageButton" onclick="uploadCatImage()">Add a new cat!</button>
 
-        <h3>Welcome to your profile ${model.currentUser[0].name}</h3>
-        <div>${model.currentUser[0].img}</div>
-        
-        <div>${model.infoToUser}</div>
-        <button onclick="updateInfoButton()">update info</button>
+        <h3 class="welcomeProfile">Welcome to your profile ${model.currentUser[0].name}</h3>
+        <div class="userImage">${model.currentUser[0].img}</div>
+        <div class="userInfo">${model.infoToUser}</div>
+        <button class="updateInfoButton" onclick="updateInfoButton()">update info</button>
         <div>${model.catInfo}</div>
         `;
 }
-
+//not done css
 function uploadCatImage(){
     model.site.innerHTML = /*HTML*/`
-    <h3>Add a new cat!</h3>
-    <input type="text" id="newNameInput" value="Insert your cats name" onfocus="this.value = this.value=='Insert your cats name'?'':this.value;" onblur="this.value = this.value==''?'Insert your cats name':this.value;"/>
-    <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
-    <button onclick="uploadCat()">Add cat</button>
-    `;
+        <h3 class="allCatsratings">Add a new cat!</h3>
+        <div class="logInSite">
+        <input class="passwordUsernameBox" type="text" id="newNameInput" value="Insert your cats name" onfocus="this.value = this.value=='Insert your cats name'?'':this.value;" onblur="this.value = this.value==''?'Insert your cats name':this.value;"/>
+        <input class="logInnButton" type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
+        </div>
+        <button class="createAccountButton" onclick="uploadCat()">Add cat</button>
+        `;
     
 }
 
@@ -99,25 +100,29 @@ function logIn(){
         profile();
     }else{
         model.site.innerHTML = /*HTML*/`
-        <button onclick="frontPage()">Back</button>
-        <div>Username:</div>
-        <input type="text" id="usernameBox"/>
-        <div>Password:</div>
-        <input type="text" id="passwordBox"/>
-        <button onclick="logInnUser()">Log in</button>
-        <p>Not have an account yet?</p>
-        <button onclick="createAccount()">Create account</button>
+        <div class="logInSite">
+        <div class="logInBoxName">Username:</div>
+        <input class="passwordUsernameBox" type="text" id="usernameBox"/>
+        <div class="logInBoxName">Password:</div>
+        <input class="passwordUsernameBox" type="text" id="passwordBox"/>
+        <button class="logInnButton" onclick="logInnUser()">Log in</button>
+        </div>
+        <p class="notLoggedIn">Not have an account yet?</p>
+        <button class="backButton" onclick="frontPage()">Back</button>
+        <button class="createAccountButton" onclick="createAccount()">Create account</button>
         `;
     };
 }
 
 function createAccount(){
     model.site.innerHTML = /*HTML*/`
-    <button onclick="frontPage()">Back</button>
-    <div>Create username:</div>
-    <input type="text" id="newUserNameBox"/>
-    <div>Create password:</div>
-    <input type="text" id="newPasswordBox"/>
-    <button onclick="createProfile()">Create Profile</button>
+    <button class="backButton" onclick="logIn()">Back</button>
+    <div class="logInSite">
+    <div class="logInBoxName">Create username:</div>
+    <input class="passwordUsernameBox" type="text" id="newUserNameBox"/>
+    <div class="logInBoxName">Create password:</div>
+    <input class="passwordUsernameBox" type="text" id="newPasswordBox"/>
+    </div>
+    <button class="createAccountButton" onclick="createProfile()">Create Profile</button>
     `;
 }

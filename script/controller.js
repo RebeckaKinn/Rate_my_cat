@@ -28,7 +28,7 @@ function logInnUser(){
         password = '';
         username = '';
         model.site.innerHTML += /*HTML*/`
-        <h3>Password or username is incorrect. Please try again.</h3>
+        <h3 class="notLoggedIn">Password or username is incorrect. Please try again.</h3>
         `;
     }
 }
@@ -37,13 +37,13 @@ function getCatToOwner(){
     for(let j = 0; j < model.cats.length; j++){
         if(model.currentUser[0].name == model.cats[j].owner){
             model.catInfo = /*HTML*/`
-            <h4>${model.cats[j].name}</h4>
-            <div><img src="${model.cats[j].img}" style="height: 300px; width: auto"/></div>
-            <p>Score: ${model.cats[j].points}</p>
+            <h4 class="profileCatName">${model.cats[j].name}</h4>
+            <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 300px; width: auto"/></div>
+            <p class="profileCatScore">Score: ${model.cats[j].points}</p>
             `;
             return model.cats[j];
         }else{
-            model.catInfo = /*HTML*/`<i>Du har ingen registrerte puser!</i>`;
+            model.catInfo = /*HTML*/`<i class="noCatsAvaliable">Du har ingen registrerte puser!</i>`;
         }
     }
 }

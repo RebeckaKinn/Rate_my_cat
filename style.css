@@ -2,11 +2,9 @@ body{
     background-color: #173F5F;
     font-size: 30px;
 }
-
 div.container{
     max-width: 600px;
     margin: 0 auto;
-
     display: grid; 
     justify-items: center;
     grid-template-columns: 200px 200px 200px;
@@ -18,7 +16,6 @@ div.container{
         'footer footer footer'
         'footer footer footer';
 }
-
 .backButton{
     grid-area: header;
     align-self: start;
@@ -31,7 +28,6 @@ div.container{
     padding: 10px;
     width: 150px;
 }
-
 .headline{
     grid-area: header;
     align-self: center;
@@ -42,18 +38,14 @@ div.container{
     width: fit-content;
     height: fit-content;
 }
-
 .frontImage{
     grid-area: body;
     align-self: center;
-    
 }
-
 .frontPageButtons{
     grid-area: footer;
     align-self: start;
 }
-
 .buttonMainPage{
     color: #000000;
     background-color:#3CAEA3;
@@ -62,13 +54,14 @@ div.container{
     font-size: 25px;
     padding: 10px;
 }
+
+
 .imageRating{
     grid-area: body;
     align-self: start;
     width: auto;
     height: 20px;
 }
-
 .leftArrow{
     grid-area: body;
     justify-self: start;
@@ -80,9 +73,7 @@ div.container{
     font-size: 25px;
     padding: 10px;
     height: 80px;
-
 }
-
 .rightArrow{
     grid-area: body;
     align-self: center;
@@ -95,7 +86,6 @@ div.container{
     padding: 10px;
     height: 80px;
 }
-
 .ratingPoints{
     grid-area: body;
     align-self: end;
@@ -104,7 +94,6 @@ div.container{
     font-family: 'Bahnschrift';
     font-size: 55px;
 }
-
 .ratingName{
     grid-area: header;
     align-self: end;
@@ -112,12 +101,10 @@ div.container{
     font-size: 70px;
     font-family: 'Lucida Handwriting';
 }
-
 .mainRating{
     grid-area: footer;
     max-width: 600px;
     margin: 0 auto;
-    
     display: grid; 
     justify-items: center;
     grid-template-columns: 50px 155px 188px 155px 50px;
@@ -126,86 +113,65 @@ div.container{
     't0 t1side t1mid t1end 0t'
     't0 t2side t2mid t2end 0t'
     't0 t3side t3mid t3end 0t'
-    't0 t4side t4mid t4end 0t';
-    
+    't0 t4side t4mid t4end 0t'; 
 }
-
 .ratingSliderNames0{
     grid-area: t1side;
 }
-
 .slideBar0{
     grid-area: t1mid;
 }
-
 .barRatings0{
     grid-area: t1end;
 }
-
-
-
 .ratingSliderNames1{
     grid-area: t2side;
 }
-
 .slideBar1{
     grid-area: t2mid;
 }
-
 .barRatings1{
     grid-area: t2end;
 }
-
-
 .ratingSliderNames2{
     grid-area: t3side;
 }
-
 .slideBar2{
     grid-area: t3mid;
 }
-
 .barRatings2{
     grid-area: t3end;
 }
-
-
-
 .ratingSliderNames3{
     grid-area: t4side;
 }
-
 .slideBar3{
     grid-area: t4mid;
 }
-
 .barRatings3{
     grid-area: t4end;
 }
-
 .ratingSliderNamesVisuals{
     justify-self: start;
     color:#3CAEA3;
     font-size: 23px;
     font-family: 'Bahnschrift';
 }
-
 .barRatingVisuals{
     color: #F6D55C;
     font-family: 'Bahnschrift';
     font-size: 40px;
 }
-
 .sliderBarVisuals{
     width: 200px;
     height: 20px;
 }
 
+
 .top3Rated{
     grid-area: body;
     max-width: 600px;
     margin: 0 auto;
-    
     display: grid; 
     justify-items: center;
     grid-template-columns: 200px 200px 200px;
@@ -216,7 +182,6 @@ div.container{
     't3side t3mid t3end'
     't4side t4mid t4end';
 }
-
 .top3Ratedtitle{
     grid-area: header;
     align-self: end;
@@ -224,25 +189,21 @@ div.container{
     font-family: 'Lucida Handwriting';
     color: #F6D55C;
 }
-
 .TopRatedName1{
     grid-area: t1side;
     font-family: 'Bahnschrift';
     font-size: 30px;
 }
-
 .TopRatedOwner1{
     grid-area: t2side; 
     font-family: 'Bahnschrift';
     font-size: 20px;
 }
-
 .TopRatedCat1{
     grid-area: t3side;
     justify-self: center;
     align-self: center;
 }
-
 .TopRatedScore1{
     grid-area: t4side;
     align-self: start;
@@ -250,26 +211,21 @@ div.container{
     font-size: 50px;
     color: #ED553B;
 }
-
-
 .TopRatedName2{
     grid-area: t1mid;
     font-family: 'Bahnschrift';
     font-size: 30px;
 }
-
 .TopRatedOwner2{
     grid-area: t2mid; 
     font-family: 'Bahnschrift';
     font-size: 20px;
 }
-
 .TopRatedCat2{
     grid-area: t3mid;
     justify-self: center;
     align-self: center;
 }
-
 .TopRatedScore2{
     grid-area: t4mid;
     align-self: start;
@@ -277,25 +233,21 @@ div.container{
     font-size: 50px;
     color: #ED553B;
 }
-
 .TopRatedName3{
     grid-area: t1end;
     font-family: 'Bahnschrift';
     font-size: 30px;
 }
-
 .TopRatedOwner3{
     grid-area: t2end; 
     font-family: 'Bahnschrift';
     font-size: 20px;
 }
-
 .TopRatedCat3{
     grid-area: t3end;
     justify-self: center;
     align-self: center;
 }
-
 .TopRatedScore3{
     grid-area: t4end;
     align-self: start;
@@ -303,7 +255,6 @@ div.container{
     font-size: 50px;
     color: #ED553B;
 }
-
 .allCatsratings{
     grid-area: footer;
     align-self: start;
@@ -326,7 +277,6 @@ div.container{
     'img img content3'
     'img img content4';  
 }
-
 .allCatsRatedName{
     grid-area: content1;
     font-family: 'Bahnschrift';
@@ -351,4 +301,55 @@ div.container{
 .allCatsRatedImg{
     grid-area: img;
     justify-self: end;
+}
+
+
+
+.logInnButton{
+    color: #000000;
+    background-color:#2bb75e;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
+    margin-top: 50px;
+}
+.createAccountButton{
+    grid-area: body;
+    align-self: end;
+    color: #000000;
+    background-color:#F6D55C;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
+}
+.logInSite{
+    grid-column: 2 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
+}
+.passwordUsernameBox{
+    font-size: 40px;
+    height: 50px;
+    width: 350px;
+}
+.logInBoxName{
+    font-size: 40px;
+    font-family: 'Bahnschrift';
+}
+.notLoggedIn{
+    grid-area: body;
+    align-self: center;
+    font-family: 'Bahnschrift';
+    padding-top: 150px;
+    font-size: 40px;
 }
