@@ -5,7 +5,7 @@ function createProfile(){
     let userIndex = model.users.length + 1;
     model.users.push({name: newUsername, 
                     password: newPassword,
-                    img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
+                    img: 'img/default_profile.png',
                     info: 'Skriv litt om deg selv',
                     id: userIndex});
     model.userOnline = true;
@@ -28,7 +28,7 @@ function logInnUser(){
         password = '';
         username = '';
         model.site.innerHTML += /*HTML*/`
-        <h3 class="notLoggedIn">Password or username is incorrect. Please try again.</h3>
+        <h3 class="wrongLogIn">Password or username is incorrect. Please try again.</h3>
         `;
     }
 }
@@ -38,7 +38,7 @@ function getCatToOwner(){
         if(model.currentUser[0].name == model.cats[j].owner){
             model.catInfo = /*HTML*/`
             <h4 class="profileCatName">${model.cats[j].name}</h4>
-            <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 300px; width: auto"/></div>
+            <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
             <p class="profileCatScore">Score: ${model.cats[j].points}</p>
             `;
             return model.cats[j];
@@ -62,12 +62,12 @@ function updateInfoButton(){
     model.edit = !model.edit;
     if(model.edit == true){
         model.infoToUser = /*HTML*/`
-        <input type="text" id="userInfoBox" value="${model.currentUser[0].info}"/>
+        <input class="inputUserInfoBox" type="text" id="userInfoBox" value="${model.currentUser[0].info}"/>
         `;
     }else{
         model.currentUser[0].info = infoInput.value;
         model.infoToUser = /*HTML*/`
-        <p>${model.currentUser[0].info}</p>
+        <div class="userInfo">${model.currentUser[0].info}</div>
         `;
     }
     profile();
@@ -124,7 +124,7 @@ function uploadCat(){
     let catIndex = model.cats.length + 1;
     model.cats.push(
         {name: model.newCatName, 
-        img: `<img src="${model.newCatImg}" style="height: 300px; width: auto"/>`, 
+        img: model.newCatImg, 
         points: 0,
         owner: model.currentUser[0].name,
         ratings: [0, 0, 0, 0],

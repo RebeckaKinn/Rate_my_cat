@@ -316,8 +316,7 @@ div.container{
     margin-top: 50px;
 }
 .createAccountButton{
-    grid-area: body;
-    align-self: end;
+    grid-area: footer;
     color: #000000;
     background-color:#F6D55C;
     border-radius: 20px;
@@ -348,8 +347,134 @@ div.container{
 }
 .notLoggedIn{
     grid-area: body;
-    align-self: center;
+    align-self: end;
     font-family: 'Bahnschrift';
     padding-top: 150px;
     font-size: 40px;
+}
+
+
+.wrongLogIn{
+    grid-area: body;
+    grid-row: 3 / 3;
+    justify-self: center;
+    font-family: 'Bahnschrift';
+    color:#ED553B
+}
+
+
+.LogOutButton{
+    grid-area: header;
+    align-self: start;
+    justify-self: end;
+    color: #000000;
+    background-color:#3CAEA3;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
+}
+.UploadCatImageButton{
+    grid-area: header;
+    align-self: start;
+    justify-self: center;
+    color: #000000;
+    background-color:#F6D55C;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
+}
+.welcomeProfile{
+    grid-area: header;
+    align-self: end;
+    justify-self: center;
+    font-family: 'Bahnschrift';
+    padding-top: 150px;
+    font-size: 30px;
+    color: #F6D55C;
+}
+.userImage{
+    grid-area: body;
+    align-self: start;
+    justify-self: start;
+    padding: 20px;
+}
+.updateInfoButton{
+    grid-column: 3 / 3;
+    grid-row: 3 / 3;
+    color: #000000;
+    background-color:#2bb75e;
+    border-radius: 20px;
+    border-color:  #20639B;
+    font-size: 30px;
+    padding: 10px;
+    height: 50px;  
+}
+.userInfoBox{
+    max-width: 600px;
+    margin: 0 auto;
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    border: #000000 solid 2px;
+    grid-template-columns: 200px 180px;
+    grid-template-rows: 200px;
+    grid-template-areas: 
+    'info info'; 
+}
+.userInfo{
+    grid-area: info;
+    align-self: start;
+    justify-self: start;
+    color: azure;
+    font-family: 'Bahnschrift';
+    font-size: 20px;
+    word-wrap: break-word;
+}
+.inputUserInfoBox{
+    word-wrap: break-word;
+    font-size: 20px;
+    height: 200px;
+    width: 372px;
+}
+
+.profileShowCat{
+    max-width: 600px;
+    margin: 0 auto;
+    grid-column-start: body;
+    align-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 83px);
+    grid-template-areas: 
+    'img img content1'
+    'img img content2'
+    'img img content3';
+}
+.profileCatImg{
+    grid-area: img;
+    justify-self: end;
+}
+.profileCatName{
+    grid-area: content1;
+    font-family: 'Bahnschrift';
+    font-size: 40px;
+    padding-left: 20px;
+}
+.profileCatScore{
+    grid-area: content2;
+    align-self: start;
+    font-family: 'Bahnschrift';
+    font-size: 30px;
+    padding-left: 20px;
+    color: #ED553B;
+}
+.noCatsAvaliable{
+    grid-area: img;
+    align-self: start;
+    justify-self: center;
+    color: #ED553B;
 }

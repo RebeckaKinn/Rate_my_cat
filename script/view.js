@@ -67,7 +67,6 @@ function topRated(){
     `;
     }
 }
-//not done css
 function profile(){
         getCatToOwner();
         model.site.innerHTML = /*HTML*/`
@@ -76,10 +75,10 @@ function profile(){
         <button class="UploadCatImageButton" onclick="uploadCatImage()">Add a new cat!</button>
 
         <h3 class="welcomeProfile">Welcome to your profile ${model.currentUser[0].name}</h3>
-        <div class="userImage">${model.currentUser[0].img}</div>
-        <div class="userInfo">${model.infoToUser}</div>
+        <div class="userImage"><img src="${model.currentUser[0].img}" style="height: 150px; width: auto"/></div>
+        <div class="userInfoBox">${model.infoToUser}</div>
         <button class="updateInfoButton" onclick="updateInfoButton()">update info</button>
-        <div>${model.catInfo}</div>
+        <div class="profileShowCat">${model.catInfo}</div>
         `;
 }
 //not done css

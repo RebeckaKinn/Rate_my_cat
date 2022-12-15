@@ -34,19 +34,19 @@ const model = {
     users: [
         {name: 'Ståle', 
         password: '123',
-        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
+        img: 'img/default_profile.png',
         info: '',
         id: 1},
 
         {name: 'Marie', 
         password: 'abc',
-        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
+        img: 'img/default_profile.png',
         info: '',
         id: 2},
 
         {name: 'Heine', 
         password: '123abc',
-        img: '<img src="img/default_profile.png" style="height: 50px; width: auto"/>',
+        img: 'img/default_profile.png',
         info: '',
         id: 3},
     ],
