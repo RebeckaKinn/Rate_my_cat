@@ -84,12 +84,15 @@ function profile(){
 //not done css
 function uploadCatImage(){
     model.site.innerHTML = /*HTML*/`
-        <h3 class="allCatsratings">Add a new cat!</h3>
+        <button class="backButton" onclick="profile()">Back</button>
         <div class="logInSite">
-        <input class="passwordUsernameBox" type="text" id="newNameInput" value="Insert your cats name" onfocus="this.value = this.value=='Insert your cats name'?'':this.value;" onblur="this.value = this.value==''?'Insert your cats name':this.value;"/>
-        <input class="logInnButton" type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
+        <h3 class="welcomeProfile">Add a new cat!</h3>
+        <input class="passwordUsernameBox" type="text" id="newNameInput" placeholder="Your cats name"/>
+        <div class="explainedUploadCat">Upload your beautiful cat image here
+        <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
         </div>
-        <button class="createAccountButton" onclick="uploadCat()">Add cat</button>
+        <button class="logInnButton" onclick="uploadCat()">Add cat</button>
+        </div>
         `;
     
 }
