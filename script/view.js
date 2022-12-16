@@ -20,14 +20,16 @@ function rating(){
         <p class="ratingPoints">${model.cats[model.currentCat].points}</p>
         <button class="rightArrow" onclick="nextCat('right')">→</button>
         `;
+        
         for(let j = 0; j < model.ratingNames.length; j++){
             model.site.innerHTML += /*HTML*/`
             <div class="mainRating">
-            <div class="ratingSliderNames${j} ratingSliderNamesVisuals">${model.ratingNames[j]}</div> 
-            <input class="slideBar${j} sliderBarVisuals" type="range" min="0" max="10" value="${model.cats[model.currentCat].ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
-            <div class="barRatings${j} barRatingVisuals">${model.cats[model.currentCat].ratings[j]}</div>
+            <div class="ratingSliderNames">${model.ratingNames[j]}</div> 
+            <input class="slideBar" type="range" min="0" max="10" value="${model.cats[model.currentCat].ratings[j]}" onchange="updateRatings(parseInt(this.value), ${j}, ${model.currentCat})"/>
+            <div class="barRatings">${model.cats[model.currentCat].ratings[j]}</div>
             </div>
             `;}
+           
 }
    
 
@@ -36,7 +38,6 @@ function topRated(){
     model.site.innerHTML = /*HTML*/`
     <button class="backButton" onclick="frontPage()">Back</button>
     <h2 class="top3Ratedtitle">Top 3 rated:</h2>
-    <br/>
     <div class="top3Rated">
         <h4 class="TopRatedName1">${model.cats[0].name}</h4>
         <p class="TopRatedOwner1">Eier: ${model.cats[0].owner}</p>
@@ -52,9 +53,8 @@ function topRated(){
         <p class="TopRatedOwner3">Eier: ${model.cats[2].owner}</p>
         <div class="TopRatedCat3"><img src="${model.cats[2].img}" style="height: auto; width: 190px"/></div>
         <p class="TopRatedScore3">${model.cats[2].points}</p>
-    <br/>
     </div>
-    <h2 class="allCatsratings">All cats:</h2>
+    <div class="allCatsratings">All cats:</div>
     `;
     for(let i = 0; i < model.cats.length; i++){
         model.site.innerHTML += /*HTML*/`
@@ -81,7 +81,7 @@ function profile(){
         <div class="profileShowCat">${model.catInfo}</div>
         `;
 }
-//not done css
+//PROBLEM: Bildet dukker ikke opp etter opplasting
 function uploadCatImage(){
     model.site.innerHTML = /*HTML*/`
         <button class="backButton" onclick="profile()">Back</button>
@@ -109,7 +109,7 @@ function logIn(){
         <input class="passwordUsernameBox" type="text" id="passwordBox"/>
         <button class="logInnButton" onclick="logInnUser()">Log in</button>
         </div>
-        <p class="notLoggedIn">Not have an account yet?</p>
+        <div class="notLoggedIn">Not have an account yet?</div>
         <button class="backButton" onclick="frontPage()">Back</button>
         <button class="createAccountButton" onclick="createAccount()">Create account</button>
         `;
@@ -125,6 +125,6 @@ function createAccount(){
     <div class="logInBoxName">Create password:</div>
     <input class="passwordUsernameBox" type="text" id="newPasswordBox"/>
     </div>
-    <button class="createAccountButton" onclick="createProfile()">Create Profile</button>
+    <button class="logInnButton" onclick="createProfile()">Create Profile</button>
     `;
 }

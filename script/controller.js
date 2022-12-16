@@ -12,7 +12,6 @@ function createProfile(){
     model.currentUser.push(model.users[model.users.length -1]);
     profile();
 }
-
 //log inn
 function logInnUser(){
     let password = document.getElementById(`passwordBox`).value;
@@ -36,7 +35,7 @@ function logInnUser(){
 function getCatToOwner(){
     for(let j = 0; j < model.cats.length; j++){
         if(model.currentUser[0].name == model.cats[j].owner){
-            model.catInfo = /*HTML*/`
+            model.catInfo += /*HTML*/`
             <h4 class="profileCatName">${model.cats[j].name}</h4>
             <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
             <p class="profileCatScore">Score: ${model.cats[j].points}</p>
@@ -47,7 +46,6 @@ function getCatToOwner(){
         }
     }
 }
-
 //log out
 function logOut(){
     model.users.push(model.currentUser[0]);
@@ -55,7 +53,6 @@ function logOut(){
     model.userOnline = false;
     frontPage();
 }
-
 //personal info
 function updateInfoButton(){
     let infoInput = document.getElementById(`userInfoBox`);
@@ -72,14 +69,12 @@ function updateInfoButton(){
     }
     profile();
 }
-
 //save rating for each cat
 function updateRatings(newRating, number, cat){
     model.cats[model.currentCat].ratings[number] = newRating;
     model.cats[cat].points = (model.cats[model.currentCat].ratings[0] + model.cats[model.currentCat].ratings[1] + model.cats[model.currentCat].ratings[2] + model.cats[model.currentCat].ratings[3]) / 4;
     rating();
 };
-
 //tuggle which cat is visible 
 function nextCat(side){
     if(side == 'right'){
@@ -97,12 +92,10 @@ function nextCat(side){
     rating();
     return model.cats[model.currentCat];
 }
-
 //check who is top rated 
 function topRatedSite(){
     model.cats.sort((a,b) => b.points - a.points).slice(0, 3)
 }
-
 //new cat upload 
 function uploadCatImage(){
     const fileUpload = document.getElementById(`uploadFile`);
@@ -115,8 +108,6 @@ function uploadCatImage(){
         reader.readAsDataURL(this.files[0]);
     }); 
 }
-
-
  
 function uploadCat(){
     let newNameInput = document.getElementById(`newNameInput`);
