@@ -64,8 +64,9 @@ function topRated(){
     `;
     }
 }
+//PROBLEM kattene står ikke på rad, pluss teksten for ingen katt dukker ikke opp med denne nye layouten
 function profile(){
-        getCatToOwner();
+        //getCatToOwner();
         model.site.innerHTML = /*HTML*/`
         <button class="backButton" onclick="frontPage()">Back</button>
         <button class="LogOutButton" onclick="logOut()">Log out</button>
@@ -75,8 +76,20 @@ function profile(){
         <div class="userImage"><img src="${model.currentUser[0].img}" style="height: 150px; width: auto"/></div>
         <div class="userInfoBox">${model.infoToUser}</div>
         <button class="updateInfoButton" onclick="updateInfoButton()">update info</button>
-        <div class="userCatCenter">${model.catInfo}</div>
         `;
+        
+        for(let j = 0; j < model.cats.length; j++){
+            if(model.currentUser[0].name == model.cats[j].owner){
+                // numberOfCats++;
+                model.site.innerHTML += /*HTML*/`
+                <div class="profileShowCat">
+                <h4 class="profileCatName">${model.cats[j].name}</h4>
+                <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
+                <p class="profileCatScore">Score: ${model.cats[j].points}</p>
+                </div>
+                `; 
+            }
+}
 }
 function uploadCatImageProfile(){
     model.site.innerHTML = /*HTML*/`

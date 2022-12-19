@@ -399,19 +399,16 @@ div.container{
     word-wrap: break-word;
 }
 .inputUserInfoBox{
-    word-wrap: break-word;
     font-size: 20px;
     height: 200px;
     width: 372px;
 }
 
-.userCatCenter{
-    justify-self: start;
-    align-self: start;
-}
 .profileShowCat{
     max-width: 600px;
     margin: 0 auto;
+    grid-column-start: footer;
+    align-self: end;
     display: grid;
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(4, 70px);
@@ -419,7 +416,7 @@ div.container{
     'img img content1'
     'img img content2'
     'img img content3'
-    'img img content4';
+    'img img content4'; 
 }
 .profileCatImg{
     grid-area: img;
