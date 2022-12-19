@@ -75,7 +75,7 @@ function profile(){
         <div class="userImage"><img src="${model.currentUser[0].img}" style="height: 150px; width: auto"/></div>
         <div class="userInfoBox">${model.infoToUser}</div>
         <button class="updateInfoButton" onclick="updateInfoButton()">update info</button>
-        <div class="profileShowCat">${model.catInfo}</div>
+        <div class="userCatCenter">${model.catInfo}</div>
         `;
 }
 function uploadCatImageProfile(){

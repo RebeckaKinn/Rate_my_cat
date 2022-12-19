@@ -38,14 +38,18 @@ function getCatToOwner(){
         if(model.currentUser[0].name == model.cats[j].owner){
             numberOfCats++;
             model.catInfo += /*HTML*/`
+            <div class="profileShowCat">
             <h4 class="profileCatName">${model.cats[j].name}</h4>
             <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
             <p class="profileCatScore">Score: ${model.cats[j].points}</p>
+            </div>
             `; 
         }
     }
     if(numberOfCats == 0){
-        model.catInfo = /*HTML*/`<i class="noCatsAvaliable">Du har ingen registrerte puser!</i>`;
+        model.catInfo = /*HTML*/`<div class="profileShowCat">
+        <i class="noCatsAvaliable">Du har ingen registrerte puser!</i>
+        </div>`;
     }else{
         return model.cats;
     }
