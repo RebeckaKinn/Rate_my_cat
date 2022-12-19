@@ -32,12 +32,13 @@ function logInnUser(){
     }
 }
 //show users cat(s)
+//PROBLEM multipliserer kattene
 function getCatToOwner(){
     let numberOfCats = 0;
     for(let j = 0; j < model.cats.length; j++){
         if(model.currentUser[0].name == model.cats[j].owner){
             numberOfCats++;
-            model.catInfo += /*HTML*/`
+            model.catInfo = /*HTML*/`
             <div class="profileShowCat">
             <h4 class="profileCatName">${model.cats[j].name}</h4>
             <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
