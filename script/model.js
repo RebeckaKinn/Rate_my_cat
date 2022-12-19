@@ -69,4 +69,6 @@ const model = {
     infoToUser: '',
     edit: false,
 
+    ownersCats: [],
+
 };

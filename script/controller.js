@@ -31,19 +31,23 @@ function logInnUser(){
         `;
     }
 }
-//show users cat not done
+//show users cat(s)
 function getCatToOwner(){
+    let numberOfCats = 0;
     for(let j = 0; j < model.cats.length; j++){
         if(model.currentUser[0].name == model.cats[j].owner){
+            numberOfCats++;
             model.catInfo += /*HTML*/`
             <h4 class="profileCatName">${model.cats[j].name}</h4>
             <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
             <p class="profileCatScore">Score: ${model.cats[j].points}</p>
-            `;
-            return model.cats[j];
-        }else{
-            model.catInfo = /*HTML*/`<i class="noCatsAvaliable">Du har ingen registrerte puser!</i>`;
+            `; 
         }
+    }
+    if(numberOfCats == 0){
+        model.catInfo = /*HTML*/`<i class="noCatsAvaliable">Du har ingen registrerte puser!</i>`;
+    }else{
+        return model.cats;
     }
 }
 //log out
