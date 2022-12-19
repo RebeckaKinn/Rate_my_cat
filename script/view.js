@@ -10,7 +10,6 @@ function frontPage(){
     </div>
     `;
 }
-
 function rating(){
         model.site.innerHTML = /*HTML*/`
         <button class="backButton" onclick="frontPage()">Back</button>
@@ -31,8 +30,6 @@ function rating(){
             `;}
            
 }
-   
-
 function topRated(){
     topRatedSite();
     model.site.innerHTML = /*HTML*/`
@@ -72,7 +69,7 @@ function profile(){
         model.site.innerHTML = /*HTML*/`
         <button class="backButton" onclick="frontPage()">Back</button>
         <button class="LogOutButton" onclick="logOut()">Log out</button>
-        <button class="UploadCatImageButton" onclick="uploadCatImage()">Add a new cat!</button>
+        <button class="UploadCatImageButton" onclick="uploadCatImageProfile()">Add a new cat!</button>
 
         <h3 class="welcomeProfile">Welcome to your profile ${model.currentUser[0].name}</h3>
         <div class="userImage"><img src="${model.currentUser[0].img}" style="height: 150px; width: auto"/></div>
@@ -81,22 +78,19 @@ function profile(){
         <div class="profileShowCat">${model.catInfo}</div>
         `;
 }
-//PROBLEM: Bildet dukker ikke opp etter opplasting
-function uploadCatImage(){
+function uploadCatImageProfile(){
     model.site.innerHTML = /*HTML*/`
         <button class="backButton" onclick="profile()">Back</button>
         <div class="logInSite">
         <h3 class="welcomeProfile">Add a new cat!</h3>
         <input class="passwordUsernameBox" type="text" id="newNameInput" placeholder="Your cats name"/>
         <div class="explainedUploadCat">Upload your beautiful cat image here
-        <input type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
+        <input onclick="uploadCatImage()" type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
         </div>
         <button class="logInnButton" onclick="uploadCat()">Add cat</button>
         </div>
         `;
-    
 }
-
 function logIn(){
     if(model.userOnline == true){
         profile();
@@ -115,7 +109,6 @@ function logIn(){
         `;
     };
 }
-
 function createAccount(){
     model.site.innerHTML = /*HTML*/`
     <button class="backButton" onclick="logIn()">Back</button>

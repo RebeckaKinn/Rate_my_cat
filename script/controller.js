@@ -100,7 +100,6 @@ function topRatedSite(){
 function uploadCatImage(){
     const fileUpload = document.getElementById(`uploadFile`);
     fileUpload.addEventListener("change", function() {
-        imageName.value = fileUpload.value;
         const reader = new FileReader();
         reader.addEventListener("load", () => {
             model.newCatImg = reader.result;
@@ -108,7 +107,6 @@ function uploadCatImage(){
         reader.readAsDataURL(this.files[0]);
     }); 
 }
- 
 function uploadCat(){
     let newNameInput = document.getElementById(`newNameInput`);
     model.newCatName = newNameInput.value;
@@ -124,4 +122,3 @@ function uploadCat(){
         profile();
     return model.cats;
 }
-
