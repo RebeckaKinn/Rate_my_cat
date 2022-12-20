@@ -337,7 +337,6 @@ div.container{
     grid-area: info;
     align-self: start;
     justify-self: start;
-    color: azure;
     font-size: 20px;
 }
 .inputUserInfoBox{
