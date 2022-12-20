@@ -133,10 +133,10 @@ function uploadCatImageProfile(){
             <button class="topButtons" onclick="profile()">Back</button>
         </div>
         <div class="logInSite">
-        <h3 class="welcomeProfile">Add a new cat!</h3>
-        <input class="passwordUsernameBox" type="text" id="newNameInput" placeholder="Your cats name"/>
-        <div class="explainedUploadCat">Upload your beautiful cat image here
-        <input onclick="uploadCatImage()" type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
+        <div class="welcomeProfile">Add a new cat!</div>
+        <input class="passwordUsernameBox" type="text" id="newNameInput" placeholder="Your cats name"/><br/><br/>
+        <div class="explainedUploadCat">Upload your beautiful cat image here:
+        <input onclick="uploadCatImage()"type="file" id="uploadFile" accepted="image/jpeg, image/png, image/jpg"/>
         </div>
         <button class="logInnButton" onclick="uploadCat()">Add cat</button>
         </div>

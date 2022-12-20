@@ -345,32 +345,26 @@ div.container{
     height: 200px;
     width: 372px;
 }
-
 .profileCatImg{
     grid-area: img;
     justify-self: end;
 }
 .profileCatName{
     grid-area: content1;
-    
     font-size: 30px;
     padding-left: 20px;
 }
 .profileCatScore{
     grid-area: content3;
     align-self: start;
-    
     font-size: 30px;
     padding-left: 20px;
-    color: #ED553B;
 }
 .noCatsAvaliable{
     grid-area: img;
     align-self: start;
     justify-self: center;
-    color: #ED553B;
 }
 .explainedUploadCat{
     font-size: 30px;
-    color: #ED553B;
 }
