@@ -1,6 +1,7 @@
 body{
     background-color:#D1B7A1;
     font-size: 30px;
+    font-family: Century Gothic;
 }
 div.container{
     max-width: 600px;
@@ -18,11 +19,9 @@ div.container{
 .headline{
     grid-area: header;
     align-self: center;
-    justify-self: center;
-    font-family: 'Lucida Handwriting';
-    font-size: 30px;
-    width: fit-content;
-    height: fit-content;
+    justify-self: start;
+    padding-right: 10px;
+    font-size: 60px;
 }
 .frontImage{
     grid-area: body;
@@ -36,7 +35,6 @@ div.container{
 }
 .topButtons{
     font-size: 25px;
-    font-family: Century Gothic;
     padding: 0;
     border: none;
     background: none;
@@ -44,7 +42,6 @@ div.container{
 .infoFrontPage{
     grid-column: 3 / 3;
     grid-row: 2 / 3;
-    font-family: Century Gothic;
     font-size: 22px;
 }
 .menu{
@@ -52,7 +49,6 @@ div.container{
     align-self: end;
     justify-self: start;
     padding-bottom: 30px;
-    font-family: Century Gothic;
     font-size: 30px;
     font-weight: bold;
 }
@@ -60,38 +56,30 @@ div.container{
 
 .imageRating{
     grid-area: body;
-    align-self: start;
+    align-self: center;
 }
 .leftArrow{
     grid-area: body;
     justify-self: start;
     align-self: center;
-    color: #000000;
-    background-color:#F6D55C;
-    border-radius: 20px;
-    border-color:#20639B;
     font-size: 25px;
-    padding: 10px;
-    height: 80px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 .rightArrow{
     grid-area: body;
     align-self: center;
     justify-self: end;
-    color: #000000;
-    background-color:#F6D55C;
-    border-radius: 20px;
-    border-color:#20639B;
     font-size: 25px;
-    padding: 10px;
-    height: 80px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 .ratingPoints{
     grid-area: body;
     align-self: end;
     justify-self: center;
-    color: #ED553B;
-    font-family: 'Bahnschrift';
     font-size: 55px;
 }
 .ratingName{
@@ -99,7 +87,7 @@ div.container{
     align-self: end;
     justify-self: center;
     font-size: 70px;
-    font-family: 'Lucida Handwriting';
+ 
 }
 .mainRating{
     grid-column-start: footer;
@@ -116,9 +104,8 @@ div.container{
 .ratingSliderNames{
     grid-area: leftside;
     justify-self: start;
-    color:#3CAEA3;
     font-size: 23px;
-    font-family: 'Bahnschrift';
+
 }
 .slideBar{
     grid-area: mid;
@@ -126,9 +113,7 @@ div.container{
     height: 20px;
 }
 .barRatings{
-    grid-area: rightside;
-    color: #F6D55C;
-    font-family: 'Bahnschrift';
+    grid-area: rightside; 
     font-size: 40px;
 }
 
@@ -151,17 +136,13 @@ div.container{
     grid-area: header;
     align-self: end;
     font-size: 50px;
-    font-family: 'Lucida Handwriting';
-    color: #F6D55C;
 }
 .TopRatedName1{
     grid-area: t1side;
-    font-family: 'Bahnschrift';
     font-size: 30px;
 }
 .TopRatedOwner1{
     grid-area: t2side; 
-    font-family: 'Bahnschrift';
     font-size: 20px;
 }
 .TopRatedCat1{
@@ -172,18 +153,14 @@ div.container{
 .TopRatedScore1{
     grid-area: t4side;
     align-self: start;
-    font-family: 'Bahnschrift';
     font-size: 50px;
-    color: #ED553B;
 }
 .TopRatedName2{
     grid-area: t1mid;
-    font-family: 'Bahnschrift';
     font-size: 30px;
 }
 .TopRatedOwner2{
-    grid-area: t2mid; 
-    font-family: 'Bahnschrift';
+    grid-area: t2mid;
     font-size: 20px;
 }
 .TopRatedCat2{
@@ -194,18 +171,14 @@ div.container{
 .TopRatedScore2{
     grid-area: t4mid;
     align-self: start;
-    font-family: 'Bahnschrift';
     font-size: 50px;
-    color: #ED553B;
 }
 .TopRatedName3{
     grid-area: t1end;
-    font-family: 'Bahnschrift';
     font-size: 30px;
 }
 .TopRatedOwner3{
     grid-area: t2end; 
-    font-family: 'Bahnschrift';
     font-size: 20px;
 }
 .TopRatedCat3{
@@ -216,16 +189,12 @@ div.container{
 .TopRatedScore3{
     grid-area: t4end;
     align-self: start;
-    font-family: 'Bahnschrift';
     font-size: 50px;
-    color: #ED553B;
 }
 .allCatsratings{
     grid-area: footer;
     align-self: start;
     font-size: 30px;
-    font-family: 'Lucida Handwriting';
-    color: #F6D55C;
 }
 
 
@@ -245,24 +214,19 @@ div.container{
 }
 .allCatsRatedName{
     grid-area: content1;
-    font-family: 'Bahnschrift';
     font-size: 30px;
     padding-left: 20px;
 }
 .allCatsRatedOwner{
     grid-area: content2;
-    font-family: 'Bahnschrift';
     font-size: 20px;
     padding-left: 20px;
-    color: #3CAEA3;
 }
 .allCatsRatedPoints{
     grid-area: content2;
     align-self: start;
-    font-family: 'Bahnschrift';
     font-size: 60px;
     padding-left: 20px;
-    color: #ED553B;
 }
 .allCatsRatedImg{
     grid-area: img;
@@ -274,25 +238,19 @@ div.container{
 .logInnButton{
     grid-area: body;
     align-self: center;
-    color: #000000;
-    background-color:#2bb75e;
-    border-radius: 20px;
-    border-color:  #20639B;
-    font-size: 30px;
-    padding: 10px;
-    width: 150px;
-    margin-top: 50px;
+    font-size: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+    padding-top: 30px;
 }
 .createAccountButton{
     grid-area: footer;
     align-self: end;
-    color: #000000;
-    background-color:#F6D55C;
-    border-radius: 20px;
-    border-color:  #20639B;
-    font-size: 30px;
-    padding: 10px;
-    width: 250px;
+    font-size: 40px;
+    padding: 0;
+    border: none;
+    background: none;
 }
 .logInSite{
     grid-column: 2 / 2;
@@ -312,76 +270,64 @@ div.container{
 }
 .logInBoxName{
     font-size: 40px;
-    font-family: 'Bahnschrift';
+    font-family: Century Gothic;
 }
 .notLoggedIn{
     grid-area: body;
     align-self: end;
-    font-family: 'Bahnschrift';
     font-size: 40px;
 }
-
-
 .wrongLogIn{
     grid-area: body;
     grid-row: 3 / 3;
     justify-self: center;
-    font-family: 'Bahnschrift';
-    color:#ED553B
+    color:#c2351d;
 }
 
 
-.LogOutButton{
-    color: #000000;
-    background-color:#F6D55C;
-    border-radius: 20px;
-    border-color:  #20639B;
-    font-size: 25px;
-    padding: 10px;
-    width: auto;
-}
 .UploadCatImageButton{
+    font-size: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.addABewCat{
     grid-area: footer;
-    color: #000000;
-    background-color:#F6D55C;
-    border-radius: 20px;
-    border-color:  #20639B;
-    font-size: 30px;
-    padding: 10px;
-    height: auto;
+    align-self: start;
+    justify-self: center;
+    font-size: 20px;
 }
 .welcomeProfile{
-    grid-area: header;
-    align-self: end;
-    justify-self: center;
-    font-family: 'Bahnschrift';
-    font-size: 30px;
-    color: #F6D55C;
-}
-.userImage{
     grid-area: body;
     align-self: start;
     justify-self: start;
-    padding: 20px;
+    font-size: 50px; 
+    font-weight: bold;
+}
+.userImage{
+    grid-area: body;
+    align-self: center;
+    justify-self: end;
 }
 .updateInfoButton{
-    grid-column: 3 / 3;
-    grid-row: 3 / 3;
-    color: #000000;
-    background-color:#2bb75e;
-    border-radius: 20px;
-    border-color:  #20639B;
+    grid-area: body;
+    align-self: end;
+    justify-self: start;
+    padding: 0;
+    border: none;
+    background: none;
     font-size: 30px;
-    padding: 10px;
-    height: 50px;  
+    padding-bottom: 65px;  
 }
 .userInfoBox{
     max-width: 600px;
     margin: 0 auto;
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: body;
+    align-self: center;
+    grid-column: 1;
     display: grid;
-    border: #000000 solid 2px;
+    border: #000000 solid 1px;
+    border-radius: 10px;
     grid-template-columns: 200px 180px;
     grid-template-rows: 200px;
     grid-template-areas: 
@@ -392,9 +338,7 @@ div.container{
     align-self: start;
     justify-self: start;
     color: azure;
-    font-family: 'Bahnschrift';
     font-size: 20px;
-    word-wrap: break-word;
 }
 .inputUserInfoBox{
     font-size: 20px;
@@ -408,14 +352,14 @@ div.container{
 }
 .profileCatName{
     grid-area: content1;
-    font-family: 'Bahnschrift';
+    
     font-size: 30px;
     padding-left: 20px;
 }
 .profileCatScore{
     grid-area: content3;
     align-self: start;
-    font-family: 'Bahnschrift';
+    
     font-size: 30px;
     padding-left: 20px;
     color: #ED553B;
@@ -429,5 +373,4 @@ div.container{
 .explainedUploadCat{
     font-size: 30px;
     color: #ED553B;
-    font-family: 'Bahnschrift';
 }
