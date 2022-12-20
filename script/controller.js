@@ -31,30 +31,6 @@ function logInnUser(){
         `;
     }
 }
-//show users cat(s)
-//PROBLEM multipliserer kattene
-function getCatToOwner(){
-    let numberOfCats = 0;
-    for(let j = 0; j < model.cats.length; j++){
-        if(model.currentUser[0].name == model.cats[j].owner){
-            numberOfCats++;
-            model.catInfo += /*HTML*/`
-            <div class="profileShowCat">
-            <h4 class="profileCatName">${model.cats[j].name}</h4>
-            <div class="profileCatImg"><img src="${model.cats[j].img}" style="height: 250px; width: auto"/></div>
-            <p class="profileCatScore">Score: ${model.cats[j].points}</p>
-            </div>
-            `; 
-        }
-    }
-    if(numberOfCats == 0){
-        model.catInfo = /*HTML*/`<div class="profileShowCat">
-        <i class="noCatsAvaliable">Du har ingen registrerte puser!</i>
-        </div>`;
-    }else{
-        return model.cats;
-    }
-}
 //log out
 function logOut(){
     model.users.push(model.currentUser[0]);
@@ -68,7 +44,7 @@ function updateInfoButton(){
     model.edit = !model.edit;
     if(model.edit == true){
         model.infoToUser = /*HTML*/`
-        <input class="inputUserInfoBox" type="text" id="userInfoBox" value="${model.currentUser[0].info}"/>
+        <input class="inputUserInfoBox" type="text" id="userInfoBox" placeholder="Write something about yourself..." value="${model.currentUser[0].info}"/>
         `;
     }else{
         model.currentUser[0].info = infoInput.value;

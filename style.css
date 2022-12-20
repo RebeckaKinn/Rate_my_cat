@@ -341,15 +341,14 @@ div.container{
     width: 150px;
 }
 .UploadCatImageButton{
-    grid-column: 2 / 3;
-    grid-row: 3 / 3;
+    grid-area: footer;
     color: #000000;
     background-color:#F6D55C;
     border-radius: 20px;
     border-color:  #20639B;
     font-size: 30px;
     padding: 10px;
-    height: 80px;
+    height: auto;
 }
 .welcomeProfile{
     grid-area: header;
@@ -404,20 +403,6 @@ div.container{
     width: 372px;
 }
 
-.profileShowCat{
-    max-width: 600px;
-    margin: 0 auto;
-    grid-column-start: footer;
-    align-self: end;
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-template-rows: repeat(4, 70px);
-    grid-template-areas: 
-    'img img content1'
-    'img img content2'
-    'img img content3'
-    'img img content4'; 
-}
 .profileCatImg{
     grid-area: img;
     justify-self: end;
