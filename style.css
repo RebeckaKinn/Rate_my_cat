@@ -1,5 +1,5 @@
 body{
-    background-color: #173F5F;
+    background-color:#D1B7A1;
     font-size: 30px;
 }
 div.container{
@@ -7,25 +7,13 @@ div.container{
     margin: 0 auto;
     display: grid; 
     justify-items: center;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 50px;
     grid-template-rows: 200px 210px 210px 50px;
     grid-template-areas: 
-        'header header header'
-        'body body body'
-        'body body body'
-        'footer footer footer';
-}
-.backButton{
-    grid-area: header;
-    align-self: start;
-    justify-self: start;
-    color: #000000;
-    background-color:#ED553B;
-    border-radius: 20px;
-    border-color:  #20639B;
-    font-size: 30px;
-    padding: 10px;
-    width: 150px;
+        'header header header topRight'
+        'body body body menu'
+        'body body body menu'
+        'footer footer footer menu';
 }
 .headline{
     grid-area: header;
@@ -33,25 +21,40 @@ div.container{
     justify-self: center;
     font-family: 'Lucida Handwriting';
     font-size: 30px;
-    color: #F6D55C;
     width: fit-content;
     height: fit-content;
 }
 .frontImage{
     grid-area: body;
     align-self: center;
+    justify-self: start;
 }
-.frontPageButtons{
-    grid-area: footer;
+.topButtonsDiv{
+    grid-area: menu;
     align-self: start;
+    justify-self: start;
 }
-.buttonMainPage{
-    color: #000000;
-    background-color:#3CAEA3;
-    border-radius: 20px;
-    border-color:  #20639B;
+.topButtons{
     font-size: 25px;
-    padding: 10px;
+    font-family: Century Gothic;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.infoFrontPage{
+    grid-column: 3 / 3;
+    grid-row: 2 / 3;
+    font-family: Century Gothic;
+    font-size: 22px;
+}
+.menu{
+    grid-area: topRight;
+    align-self: end;
+    justify-self: start;
+    padding-bottom: 30px;
+    font-family: Century Gothic;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 
@@ -329,16 +332,13 @@ div.container{
 
 
 .LogOutButton{
-    grid-area: header;
-    align-self: start;
-    justify-self: end;
     color: #000000;
-    background-color:#3CAEA3;
+    background-color:#F6D55C;
     border-radius: 20px;
     border-color:  #20639B;
-    font-size: 30px;
+    font-size: 25px;
     padding: 10px;
-    width: 150px;
+    width: auto;
 }
 .UploadCatImageButton{
     grid-area: footer;
@@ -355,7 +355,6 @@ div.container{
     align-self: end;
     justify-self: center;
     font-family: 'Bahnschrift';
-    padding-top: 150px;
     font-size: 30px;
     color: #F6D55C;
 }

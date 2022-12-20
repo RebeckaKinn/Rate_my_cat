@@ -1,18 +1,34 @@
 frontPage();
 function frontPage(){
-    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 400px; width: auto; border-radius: 80px;" />';
+    const frontImage = '<img src="img/mustache_cat.jpg" style="height: 350px; width: auto; border-radius: 80px;" />';
     model.site.innerHTML = /*HTML*/`
     <div class="headline"><h1>Rate My Pussy!</h1></div>
     <div class="frontImage">${frontImage}</div>
-    <div class="frontPageButtons"><button class="buttonMainPage" onclick="rating()">Rating</button>
-    <button class="buttonMainPage" onclick="topRated()">Topp rated</button>
-    <button class="buttonMainPage" onclick="logIn()">Profile</button>
+    <div class="menu">Menu</div>
+    <div class="topButtonsDiv">
+        <button class="topButtons" onclick="rating()">Rating</button>
+        <button class="topButtons" onclick="topRated()">Rated</button>
+        <button class="topButtons" onclick="logIn()">Profile</button>
     </div>
+    <p class="infoFrontPage">
+        Welcome to Rate My Pussy! cat rating site. <br/><br/>
+        Here you can share your cat to the community, 
+        get your cat rated by others, and rate others cats! <br/><br/>
+        Join our community <button class="topButtons" onclick="createAccount()">here.</button>
+    </p>
     `;
 }
 function rating(){
         model.site.innerHTML = /*HTML*/`
-        <button class="backButton" onclick="frontPage()">Back</button>
+        <div class="menu">Menu</div>
+        <div class="topButtonsDiv">
+        <button class="topButtons" onclick="rating()">Rating</button>
+        <button class="topButtons" onclick="topRated()">Rated</button>
+        <button class="topButtons" onclick="logIn()">Profile</button>
+        <br/>
+        <br/>
+        <button class="topButtons" onclick="frontPage()">Back</button>
+        </div>
         <div class="ratingName">${model.cats[model.currentCat].name}</div>
         <button class="leftArrow" onclick="nextCat('left')">←</button>
         <div class="imageRating"><img src="${model.cats[model.currentCat].img}" style="height: 300px; width: auto"/></div>
@@ -33,7 +49,15 @@ function rating(){
 function topRated(){
     topRatedSite();
     model.site.innerHTML = /*HTML*/`
-    <button class="backButton" onclick="frontPage()">Back</button>
+    <div class="menu">Menu</div>
+    <div class="topButtonsDiv">
+            <button class="topButtons" onclick="rating()">Rating</button>
+            <button class="topButtons" onclick="topRated()">Rated</button>
+            <button class="topButtons" onclick="logIn()">Profile</button>
+            <br/>
+            <br/>
+            <button class="topButtons" onclick="frontPage()">Back</button>
+    </div>
     <h2 class="top3Ratedtitle">Top 3 rated:</h2>
     <div class="top3Rated">
         <h4 class="TopRatedName1">${model.cats[0].name}</h4>
@@ -66,16 +90,21 @@ function topRated(){
 }
 function profile(){
         model.site.innerHTML = /*HTML*/`
-        <button class="backButton" onclick="frontPage()">Back</button>
-        <button class="LogOutButton" onclick="logOut()">Log out</button>
+        <div class="menu">Menu</div>
+        <div class="topButtonsDiv">
+            <button class="topButtons" onclick="rating()">Rating</button>
+            <button class="topButtons" onclick="topRated()">Rated</button>
+            <button class="topButtons" onclick="logOut()">Log out</button>
+            <br/>
+            <br/>
+            <button class="topButtons" onclick="frontPage()">Back</button>
+        </div>
         <button class="UploadCatImageButton" onclick="uploadCatImageProfile()">Add a new cat!</button>
-
         <h3 class="welcomeProfile">Welcome to your profile ${model.currentUser[0].name}</h3>
         <div class="userImage"><img src="${model.currentUser[0].img}" style="height: 150px; width: auto"/></div>
         <div class="userInfoBox">${model.infoToUser}</div>
         <button class="updateInfoButton" onclick="updateInfoButton()">update info</button>
         `;
-        
         for(let j = 0; j < model.cats.length; j++){
             if(model.currentUser[0].name == model.cats[j].owner){
                 // numberOfCats++;
@@ -87,11 +116,19 @@ function profile(){
                 </div>
                 `; 
             }
-}
+        }
 }
 function uploadCatImageProfile(){
     model.site.innerHTML = /*HTML*/`
-        <button class="backButton" onclick="profile()">Back</button>
+    <div class="menu">Menu</div>
+        <div class="topButtonsDiv">
+            <button class="topButtons" onclick="rating()">Rating</button>
+            <button class="topButtons" onclick="topRated()">Rated</button>
+            <button class="topButtons" onclick="logIn()">Profile</button>
+            <br/>
+            <br/>
+            <button class="topButtons" onclick="frontPage()">Back</button>
+        </div>
         <div class="logInSite">
         <h3 class="welcomeProfile">Add a new cat!</h3>
         <input class="passwordUsernameBox" type="text" id="newNameInput" placeholder="Your cats name"/>
@@ -107,6 +144,15 @@ function logIn(){
         profile();
     }else{
         model.site.innerHTML = /*HTML*/`
+        <div class="menu">Menu</div>
+        <div class="topButtonsDiv">
+            <button class="topButtons" onclick="rating()">Rating</button>
+            <button class="topButtons" onclick="topRated()">Rated</button>
+            <button class="topButtons" onclick="logIn()">Profile</button>
+            <br/>
+            <br/>
+            <button class="topButtons" onclick="frontPage()">Back</button>
+        </div>
         <div class="logInSite">
         <div class="logInBoxName">Username:</div>
         <input class="passwordUsernameBox" type="text" id="usernameBox"/>
@@ -115,14 +161,21 @@ function logIn(){
         <button class="logInnButton" onclick="logInnUser()">Log in</button>
         </div>
         <div class="notLoggedIn">Not have an account yet?</div>
-        <button class="backButton" onclick="frontPage()">Back</button>
         <button class="createAccountButton" onclick="createAccount()">Create account</button>
         `;
     };
 }
 function createAccount(){
     model.site.innerHTML = /*HTML*/`
-    <button class="backButton" onclick="logIn()">Back</button>
+    <div class="menu">Menu</div>
+    <div class="topButtonsDiv">
+        <button class="topButtons" onclick="rating()">Rating</button>
+        <button class="topButtons" onclick="topRated()">Rated</button>
+        <button class="topButtons" onclick="logIn()">Profile</button>
+        <br/>
+        <br/>
+        <button class="topButtons" onclick="frontPage()">Back</button>
+    </div>
     <div class="logInSite">
     <div class="logInBoxName">Create username:</div>
     <input class="passwordUsernameBox" type="text" id="newUserNameBox"/>
